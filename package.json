@@ -1,0 +1,23 @@
+{
+  "name": "so-sach-nguoi-de-lai",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Game học kế toán Việt Nam — dùng cá nhân, phi thương mại",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "zod": "^3.25.67"
+  }
+}

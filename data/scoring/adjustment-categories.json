@@ -1,0 +1,11 @@
+{
+  "note": "Danh mục điều chỉnh về bản chất ở mức \"Vừa\" (SPEC 4.3, Tầng 3 phần b).",
+  "categories": [
+    { "id": "provision-overdue", "label": "Dự phòng phải thu quá hạn chưa trích" },
+    { "id": "prepaid-should-expense", "label": "Chi phí treo ở 242 lẽ ra là chi phí kỳ" },
+    { "id": "revenue-cutoff", "label": "Doanh thu ghi sai kỳ" },
+    { "id": "damaged-inventory", "label": "Tồn kho hỏng chưa xử lý" },
+    { "id": "related-loan-reclass", "label": "Khoản cho bên liên quan vay bị ghi như phải thu thương mại (phân loại lại)" },
+    { "id": "interest-capitalization", "label": "Chi phí lãi vay lẽ ra vốn hóa hoặc ngược lại" }
+  ]
+}

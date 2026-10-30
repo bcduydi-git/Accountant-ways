@@ -1,0 +1,12 @@
+{
+  "id": "cit-nonbusiness-depreciation",
+  "kind": "nonbusiness-depreciation",
+  "description": "Khấu hao TSCĐ không dùng cho sản xuất kinh doanh không được trừ khi tính thuế TNDN (kịch bản không dùng các ngoại lệ).",
+  "params": {},
+  "basis": "NĐ 320/2025/NĐ-CP, Điều 10 (theo SPEC 7.2, nguồn thứ cấp; chưa đọc văn bản gốc)",
+  "asOf": "2026-10-30",
+  "status": "verified-secondary",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}

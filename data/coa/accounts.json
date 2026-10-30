@@ -1,0 +1,540 @@
+{
+ "source": "SPEC.md mục 7.3 (danh sách TK loại 1–3 và 411 theo TT 99/2025 — nguồn thứ cấp); TK loại 4–9 và TK cấp 2, 3 tạm theo TT 200, cờ needsCheck. Phụ lục II TT 99 CHƯA đọc được văn bản gốc (SPEC 8.1).",
+ "verification": "unverified-primary",
+ "accounts": [
+  {
+   "code": "111",
+   "name": "Tiền mặt",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "112",
+   "name": "Tiền gửi không kỳ hạn",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "113",
+   "name": "Tiền đang chuyển",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "121",
+   "name": "Chứng khoán kinh doanh",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "128",
+   "name": "Đầu tư nắm giữ đến ngày đáo hạn",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "1283",
+   "name": "Cho vay",
+   "parent": "128",
+   "needsCheck": true
+  },
+  {
+   "code": "1288",
+   "name": "Các khoản đầu tư khác nắm giữ đến ngày đáo hạn",
+   "parent": "128",
+   "needsCheck": true
+  },
+  {
+   "code": "131",
+   "name": "Phải thu của khách hàng",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "133",
+   "name": "Thuế GTGT được khấu trừ",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "1331",
+   "name": "Thuế GTGT được khấu trừ của hàng hóa, dịch vụ",
+   "parent": "133",
+   "needsCheck": true
+  },
+  {
+   "code": "1332",
+   "name": "Thuế GTGT được khấu trừ của TSCĐ",
+   "parent": "133",
+   "needsCheck": true
+  },
+  {
+   "code": "136",
+   "name": "Phải thu nội bộ",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "138",
+   "name": "Phải thu khác",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "1388",
+   "name": "Phải thu khác",
+   "parent": "138",
+   "needsCheck": true
+  },
+  {
+   "code": "141",
+   "name": "Tạm ứng",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "151",
+   "name": "Hàng mua đang đi đường",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "152",
+   "name": "Nguyên liệu, vật liệu",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "153",
+   "name": "Công cụ, dụng cụ",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "154",
+   "name": "Chi phí sản xuất, kinh doanh dở dang",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "155",
+   "name": "Sản phẩm",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "156",
+   "name": "Hàng hóa",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "157",
+   "name": "Hàng gửi đi bán",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "158",
+   "name": "TK 158 (tên theo TT 99 cần đối chiếu)",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "171",
+   "name": "Giao dịch mua bán lại trái phiếu Chính phủ",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "211",
+   "name": "Tài sản cố định hữu hình",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "212",
+   "name": "Tài sản cố định thuê tài chính",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "213",
+   "name": "Tài sản cố định vô hình",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "214",
+   "name": "Hao mòn tài sản cố định",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "2141",
+   "name": "Hao mòn TSCĐ hữu hình",
+   "parent": "214",
+   "needsCheck": true
+  },
+  {
+   "code": "2143",
+   "name": "Hao mòn TSCĐ vô hình",
+   "parent": "214",
+   "needsCheck": true
+  },
+  {
+   "code": "215",
+   "name": "TK 215 (mới theo TT 99, tên cần đối chiếu)",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "217",
+   "name": "Bất động sản đầu tư",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "221",
+   "name": "Đầu tư vào công ty con",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "222",
+   "name": "Đầu tư vào công ty liên doanh, liên kết",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "228",
+   "name": "Đầu tư khác",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "229",
+   "name": "Dự phòng tổn thất tài sản",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "2293",
+   "name": "Dự phòng phải thu khó đòi",
+   "parent": "229",
+   "needsCheck": true
+  },
+  {
+   "code": "2294",
+   "name": "Dự phòng giảm giá hàng tồn kho",
+   "parent": "229",
+   "needsCheck": true
+  },
+  {
+   "code": "241",
+   "name": "Xây dựng cơ bản dở dang",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "242",
+   "name": "Chi phí chờ phân bổ",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "243",
+   "name": "Tài sản thuế thu nhập hoãn lại",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "244",
+   "name": "Ký quỹ, ký cược",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "331",
+   "name": "Phải trả cho người bán",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "332",
+   "name": "TK 332 (mới theo TT 99, tên cần đối chiếu)",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "333",
+   "name": "Thuế và các khoản phải nộp Nhà nước",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "3331",
+   "name": "Thuế GTGT phải nộp",
+   "parent": "333",
+   "needsCheck": true
+  },
+  {
+   "code": "33311",
+   "name": "Thuế GTGT đầu ra",
+   "parent": "3331",
+   "needsCheck": true
+  },
+  {
+   "code": "3334",
+   "name": "Thuế thu nhập doanh nghiệp",
+   "parent": "333",
+   "needsCheck": true
+  },
+  {
+   "code": "3335",
+   "name": "Thuế thu nhập cá nhân",
+   "parent": "333",
+   "needsCheck": true
+  },
+  {
+   "code": "3338",
+   "name": "Thuế bảo vệ môi trường và các loại thuế khác",
+   "parent": "333",
+   "needsCheck": true
+  },
+  {
+   "code": "3339",
+   "name": "Phí, lệ phí và các khoản phải nộp khác",
+   "parent": "333",
+   "needsCheck": true
+  },
+  {
+   "code": "334",
+   "name": "Phải trả người lao động",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "335",
+   "name": "Chi phí phải trả",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "336",
+   "name": "Phải trả nội bộ",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "337",
+   "name": "Thanh toán theo tiến độ kế hoạch hợp đồng xây dựng",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "338",
+   "name": "Phải trả, phải nộp khác",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "3388",
+   "name": "Phải trả, phải nộp khác",
+   "parent": "338",
+   "needsCheck": true
+  },
+  {
+   "code": "341",
+   "name": "Vay và nợ thuê tài chính",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "3411",
+   "name": "Các khoản đi vay",
+   "parent": "341",
+   "needsCheck": true
+  },
+  {
+   "code": "343",
+   "name": "Trái phiếu phát hành",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "344",
+   "name": "Nhận ký quỹ, ký cược",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "347",
+   "name": "Thuế thu nhập hoãn lại phải trả",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "352",
+   "name": "Dự phòng phải trả",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "353",
+   "name": "Quỹ khen thưởng, phúc lợi",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "356",
+   "name": "Quỹ phát triển khoa học và công nghệ",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "357",
+   "name": "Quỹ bình ổn giá",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "411",
+   "name": "Vốn đầu tư của chủ sở hữu",
+   "parent": null,
+   "needsCheck": false
+  },
+  {
+   "code": "4111",
+   "name": "Vốn góp của chủ sở hữu",
+   "parent": "411",
+   "needsCheck": true
+  },
+  {
+   "code": "421",
+   "name": "Lợi nhuận sau thuế chưa phân phối",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "4211",
+   "name": "LNST chưa phân phối lũy kế đến cuối năm trước",
+   "parent": "421",
+   "needsCheck": true
+  },
+  {
+   "code": "4212",
+   "name": "LNST chưa phân phối năm nay",
+   "parent": "421",
+   "needsCheck": true
+  },
+  {
+   "code": "511",
+   "name": "Doanh thu bán hàng và cung cấp dịch vụ",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "5111",
+   "name": "Doanh thu bán hàng hóa",
+   "parent": "511",
+   "needsCheck": true
+  },
+  {
+   "code": "5112",
+   "name": "Doanh thu bán sản phẩm",
+   "parent": "511",
+   "needsCheck": true
+  },
+  {
+   "code": "5113",
+   "name": "Doanh thu cung cấp dịch vụ",
+   "parent": "511",
+   "needsCheck": true
+  },
+  {
+   "code": "515",
+   "name": "Doanh thu hoạt động tài chính",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "521",
+   "name": "Các khoản giảm trừ doanh thu",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "621",
+   "name": "Chi phí nguyên liệu, vật liệu trực tiếp",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "622",
+   "name": "Chi phí nhân công trực tiếp",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "627",
+   "name": "Chi phí sản xuất chung",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "632",
+   "name": "Giá vốn hàng bán",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "635",
+   "name": "Chi phí tài chính",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "641",
+   "name": "Chi phí bán hàng",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "642",
+   "name": "Chi phí quản lý doanh nghiệp",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "711",
+   "name": "Thu nhập khác",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "811",
+   "name": "Chi phí khác",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "821",
+   "name": "Chi phí thuế thu nhập doanh nghiệp",
+   "parent": null,
+   "needsCheck": true
+  },
+  {
+   "code": "8211",
+   "name": "Chi phí thuế TNDN hiện hành",
+   "parent": "821",
+   "needsCheck": true
+  },
+  {
+   "code": "911",
+   "name": "Xác định kết quả kinh doanh",
+   "parent": null,
+   "needsCheck": true
+  }
+ ]
+}

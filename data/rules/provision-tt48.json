@@ -1,0 +1,12 @@
+{
+  "id": "provision-tt48",
+  "kind": "informational",
+  "description": "Điều kiện và mức trích lập dự phòng (TT 48/2019). Chưa đọc: kịch bản cho sẵn số phải trích, không áp tỷ lệ theo thời gian quá hạn; không điều chỉnh thuế cho dự phòng.",
+  "params": {},
+  "basis": "TT 48/2019/TT-BTC — SPEC 8.4, chưa đọc văn bản gốc",
+  "asOf": "2026-10-30",
+  "status": "unverified",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}

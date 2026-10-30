@@ -1,0 +1,12 @@
+{
+  "id": "cit-noncredit-interest-cap",
+  "kind": "informational",
+  "description": "Lãi vay trả cho bên không phải tổ chức tín dụng vượt mức theo Bộ luật Dân sự không được trừ. Mức trần chưa kiểm chứng.",
+  "params": {},
+  "basis": "NĐ 320/2025/NĐ-CP, Điều 10; Bộ luật Dân sự — SPEC 8.3, chưa đọc văn bản gốc",
+  "asOf": "2026-10-30",
+  "status": "unverified",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}

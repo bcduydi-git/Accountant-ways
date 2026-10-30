@@ -1,0 +1,23 @@
+{
+  "id": "vat-reduction-8",
+  "kind": "vat-reduced-rate",
+  "description": "Giảm thuế suất GTGT từ 10% xuống 8% cho hàng hóa, dịch vụ đang chịu 10% (trừ nhóm không được giảm), từ 1/7/2025 đến hết 31/12/2026.",
+  "params": {
+    "standardRate": 0.1,
+    "reducedRate": 0.08,
+    "validFrom": "2025-07-01",
+    "validTo": "2026-12-31",
+    "inputVatPrefixes": [
+      "133"
+    ],
+    "outputVatPrefixes": [
+      "3331"
+    ]
+  },
+  "basis": "Nghị quyết 204/2025/QH15; Nghị định 174/2025/NĐ-CP (theo SPEC 7.2; chưa đọc văn bản gốc; danh mục nhóm không được giảm chưa kiểm chứng — SPEC 8.5)",
+  "asOf": "2026-10-30",
+  "status": "verified-secondary",
+  "effects": [
+    "vat-rate"
+  ]
+}

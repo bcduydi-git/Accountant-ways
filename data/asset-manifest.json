@@ -1,0 +1,30 @@
+{
+  "note": "Bản đồ asset tải thủ công (SPEC 9). Đặt gói vào assets/_raw/<tên-gói>/ rồi sửa đường dẫn ở đây. Đường dẫn bắt đầu bằng / tính từ thư mục assets/. Giá trị null = dùng hình giữ chỗ. frame = [x, y, rộng, cao] nếu dùng sprite sheet.",
+  "fonts": {
+    "body": { "family": "Be Vietnam Pro", "files": { "400": "/_raw/be-vietnam-pro/BeVietnamPro-Regular.ttf", "600": "/_raw/be-vietnam-pro/BeVietnamPro-SemiBold.ttf", "700": "/_raw/be-vietnam-pro/BeVietnamPro-Bold.ttf" } },
+    "pixel": { "family": "Cairopixel", "files": { "400": "/_raw/cairopixel/Cairopixel.ttf" } },
+    "pixelAlt": { "family": "VT323", "files": { "400": "/_raw/vt323/VT323-Regular.ttf" } }
+  },
+  "office": {
+    "background": null,
+    "desk": null,
+    "plant": null
+  },
+  "characters": {
+    "h1-chu-tu": null,
+    "h1-ba-may": null,
+    "h1-be-na": null,
+    "h2-co-ngan": null,
+    "h2-ong-bao": null,
+    "h2-anh-cua": null,
+    "h2-ha-vy": null,
+    "h3-chi-lam": null,
+    "h3-ong-thuy": null,
+    "h3-anh-khoa": null,
+    "h3-can-bo-thue": null
+  },
+  "ui": {
+    "panel": null,
+    "button": null
+  }
+}

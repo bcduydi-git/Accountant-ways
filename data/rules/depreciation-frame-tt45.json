@@ -1,0 +1,12 @@
+{
+  "id": "depreciation-frame-tt45",
+  "kind": "informational",
+  "description": "Khung thời gian trích khấu hao TSCĐ (Phụ lục I TT 45/2013). Chưa đọc: kịch bản tự cho thời gian khấu hao, game không chấm đúng/sai khung.",
+  "params": {},
+  "basis": "TT 45/2013/TT-BTC, Phụ lục I — SPEC 8.4, chưa đọc văn bản gốc",
+  "asOf": "2026-10-30",
+  "status": "unverified",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}

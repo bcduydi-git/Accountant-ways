@@ -1,0 +1,18 @@
+{
+  "id": "invoice-validity",
+  "kind": "invalid-invoice",
+  "description": "Hóa đơn không hợp lệ: GTGT đầu vào không được khấu trừ, khoản chi không được trừ. Điều kiện hóa đơn hợp lệ chưa kiểm chứng.",
+  "params": {
+    "expensePrefixes": [
+      "6",
+      "8"
+    ]
+  },
+  "basis": "Quy định hóa đơn điện tử — SPEC 8.7, chưa đọc văn bản gốc",
+  "asOf": "2026-10-30",
+  "status": "unverified",
+  "effects": [
+    "vat-not-deductible",
+    "cit-nondeductible-expense"
+  ]
+}

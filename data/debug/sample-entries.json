@@ -1,0 +1,22 @@
+{
+  "note": "10 bút toán mẫu cho màn debug (M0). Công ty mẫu hư cấu, số liệu tròn để dễ kiểm tra.",
+  "opening": [
+    { "account": "111", "debit": 50000000 },
+    { "account": "112", "debit": 300000000 },
+    { "account": "156", "debit": 100000000 },
+    { "account": "4111", "credit": 400000000 },
+    { "account": "4211", "credit": 50000000 }
+  ],
+  "entries": [
+    { "date": "2026-01-03", "memo": "1. Mua hàng nhập kho, chưa trả tiền", "lines": [{ "account": "156", "debit": 40000000 }, { "account": "1331", "debit": 3200000 }, { "account": "331", "credit": 43200000, "partner": "ncc-mau" }] },
+    { "date": "2026-01-05", "memo": "2. Bán hàng thu tiền gửi", "lines": [{ "account": "112", "debit": 54000000 }, { "account": "5111", "credit": 50000000 }, { "account": "33311", "credit": 4000000 }] },
+    { "date": "2026-01-05", "memo": "3. Giá vốn hàng bán", "lines": [{ "account": "632", "debit": 30000000 }, { "account": "156", "credit": 30000000 }] },
+    { "date": "2026-01-10", "memo": "4. Bán chịu", "lines": [{ "account": "131", "debit": 32400000, "partner": "kh-mau" }, { "account": "5111", "credit": 30000000 }, { "account": "33311", "credit": 2400000 }] },
+    { "date": "2026-01-10", "memo": "5. Giá vốn bán chịu", "lines": [{ "account": "632", "debit": 18000000 }, { "account": "156", "credit": 18000000 }] },
+    { "date": "2026-01-15", "memo": "6. Trả nợ nhà cung cấp", "lines": [{ "account": "331", "debit": 43200000, "partner": "ncc-mau" }, { "account": "112", "credit": 43200000 }] },
+    { "date": "2026-01-20", "memo": "7. Vay ngắn hạn ngân hàng", "lines": [{ "account": "112", "debit": 100000000 }, { "account": "3411", "credit": 100000000, "partner": "bank-mau" }] },
+    { "date": "2026-01-22", "memo": "8. Mua TSCĐ bằng tiền gửi", "lines": [{ "account": "211", "debit": 60000000 }, { "account": "1331", "debit": 4800000 }, { "account": "112", "credit": 64800000 }] },
+    { "date": "2026-01-31", "memo": "9. Tính và trả lương", "lines": [{ "account": "642", "debit": 12000000 }, { "account": "111", "credit": 12000000 }] },
+    { "date": "2026-01-31", "memo": "10. Khấu hao TSCĐ", "lines": [{ "account": "642", "debit": 1000000 }, { "account": "2141", "credit": 1000000 }] }
+  ]
+}

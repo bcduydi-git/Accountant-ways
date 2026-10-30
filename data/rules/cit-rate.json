@@ -1,0 +1,24 @@
+{
+  "id": "cit-rate",
+  "kind": "cit-rate",
+  "description": "Thuế suất thuế TNDN theo tổng doanh thu năm của kỳ tính thuế liền trước: 15% nếu không quá 3 tỷ; 17% nếu trên 3 tỷ đến không quá 50 tỷ; còn lại 20%.",
+  "params": {
+    "brackets": [
+      {
+        "maxRevenueVND": 3000000000,
+        "rate": 0.15
+      },
+      {
+        "maxRevenueVND": 50000000000,
+        "rate": 0.17
+      }
+    ],
+    "defaultRate": 0.2
+  },
+  "basis": "Luật Thuế TNDN số 67/2025/QH15, Điều 10 (theo SPEC 7.2; chưa đọc văn bản gốc)",
+  "asOf": "2026-10-30",
+  "status": "verified-secondary",
+  "effects": [
+    "cit-rate"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "cit-passenger-car-cap",
+  "kind": "passenger-car-depreciation-cap",
+  "description": "Ô tô chở người từ 9 chỗ trở xuống: phần khấu hao tương ứng nguyên giá vượt 1,6 tỷ đồng/xe không được trừ (có ngoại lệ ngành).",
+  "params": {
+    "capVND": 1600000000,
+    "maxSeats": 9
+  },
+  "basis": "NĐ 320/2025/NĐ-CP, Điều 10 — ngưỡng thuộc SPEC 8.3, chưa đọc được văn bản gốc nên giữ unverified",
+  "asOf": "2026-10-30",
+  "status": "unverified",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}

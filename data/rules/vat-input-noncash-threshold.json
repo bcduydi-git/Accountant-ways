@@ -1,0 +1,19 @@
+{
+  "id": "vat-input-noncash-threshold",
+  "kind": "noncash-payment-threshold",
+  "description": "Hóa đơn đầu vào từ ngưỡng trở lên (đã gồm GTGT) phải có chứng từ thanh toán không dùng tiền mặt; trả bằng tiền mặt thì GTGT đầu vào không được khấu trừ và khoản chi không được trừ khi tính thuế TNDN.",
+  "params": {
+    "thresholdVND": 5000000,
+    "expensePrefixes": [
+      "6",
+      "8"
+    ]
+  },
+  "basis": "NĐ 181/2025/NĐ-CP, Điều 26; NĐ 320/2025/NĐ-CP, Điều 9 khoản 1 điểm c (theo SPEC 7.2; chưa đọc văn bản gốc)",
+  "asOf": "2026-10-30",
+  "status": "verified-secondary",
+  "effects": [
+    "vat-not-deductible",
+    "cit-nondeductible-expense"
+  ]
+}

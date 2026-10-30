@@ -1,0 +1,29 @@
+{
+  "note": "Quy tắc bản chất kế toán (SPEC 4.2) — không phải quy định pháp lý.",
+  "rules": [
+    {
+      "id": "no-cross-partner-offset",
+      "type": "forbid-cross-partner-offset",
+      "scope": "global",
+      "receivablePrefixes": ["131"],
+      "payablePrefixes": ["331"],
+      "message": "Không bù trừ phải thu của khách hàng này với phải trả cho nhà cung cấp khác khi không có thỏa thuận ba bên — mỗi đối tượng phải được theo dõi riêng."
+    },
+    {
+      "id": "no-debit-revenue",
+      "type": "forbid-side",
+      "scope": "event",
+      "prefixes": ["511"],
+      "side": "debit",
+      "message": "Kịch bản yêu cầu dùng TK giảm trừ doanh thu, không ghi Nợ thẳng vào doanh thu (doanh thu âm)."
+    },
+    {
+      "id": "closing-via-911",
+      "type": "require-account-when-touching",
+      "scope": "closing",
+      "whenTouching": ["5", "6", "7", "8"],
+      "require": "911",
+      "message": "Kết chuyển doanh thu, chi phí phải đi qua TK 911 rồi mới sang 421 — không kết chuyển thẳng vào lợi nhuận chưa phân phối."
+    }
+  ]
+}

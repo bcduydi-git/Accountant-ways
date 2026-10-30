@@ -1,0 +1,21 @@
+{
+  "id": "cit-admin-penalty",
+  "kind": "nondeductible-expense-type",
+  "description": "Tiền phạt vi phạm hành chính, kể cả tiền chậm nộp thuế, không được trừ khi tính thuế TNDN.",
+  "params": {
+    "expenseTypes": [
+      "admin-penalty",
+      "late-payment-interest"
+    ],
+    "expensePrefixes": [
+      "6",
+      "8"
+    ]
+  },
+  "basis": "NĐ 320/2025/NĐ-CP, Điều 10 (theo SPEC 7.2, nguồn thứ cấp MISA; chưa đọc văn bản gốc)",
+  "asOf": "2026-10-30",
+  "status": "verified-secondary",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}

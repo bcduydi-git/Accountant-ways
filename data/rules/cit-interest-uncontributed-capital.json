@@ -1,0 +1,12 @@
+{
+  "id": "cit-interest-uncontributed-capital",
+  "kind": "interest-uncontributed-capital",
+  "description": "Lãi tiền vay tương ứng phần vốn điều lệ còn thiếu không được trừ. Công thức phân bổ trong game là giản lược (tỷ lệ vốn còn thiếu / dư nợ vay), chưa đối chiếu văn bản.",
+  "params": {},
+  "basis": "NĐ 320/2025/NĐ-CP, Điều 10 và TT 20/2026/TT-BTC — SPEC 8.3, chưa đọc văn bản gốc",
+  "asOf": "2026-10-30",
+  "status": "unverified",
+  "effects": [
+    "cit-nondeductible-expense"
+  ]
+}
