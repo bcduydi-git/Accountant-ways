@@ -32,8 +32,21 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 - [x] Tầng 3 (a) khớp engine; (b) 4 điều chỉnh gồm phân loại lại khoản cho bên liên quan vay (131 → 1283), doanh thu sai kỳ, khăn mốc, dự phòng
 
 ### M5 — Asset
-- [ ] Font đủ dấu (trang /font-test)
-- [ ] CREDITS.md đủ
+- [ ] **CHƯA ĐẠT — Font đủ dấu**: chưa có file font trong `assets/_raw/` nên chưa thử dấu được. Trang `/font-test` đã dựng sẵn (chữ thường và in hoa có dấu theo SPEC 9, cỡ thực tế, so sánh tabular-nums). Đặt font vào rồi mở trang này để tự kiểm.
+- [x] CREDITS.md liệt kê đủ gói, tác giả, giấy phép, link gốc và trạng thái (chưa tải)
+- [x] Có sẵn code nạp sprite và font (`src/scene/assets.ts` + `data/asset-manifest.json`), thiếu file thì tự rơi về hình giữ chỗ. Nhân vật và thoại có ở cả 3 hồ sơ (thoại mở tháng, kết năm, lời kể từng nghiệp vụ, giải thích của kế toán trưởng).
+
+#### Đường dẫn cần đặt file (sửa được trong `data/asset-manifest.json`)
+| File | Đặt tại | Khai báo |
+|---|---|---|
+| Be Vietnam Pro Regular/SemiBold/Bold | `assets/_raw/be-vietnam-pro/BeVietnamPro-Regular.ttf`, `-SemiBold.ttf`, `-Bold.ttf` | `fonts.body` |
+| Cairopixel | `assets/_raw/cairopixel/Cairopixel.ttf` | `fonts.pixel` |
+| VT323 | `assets/_raw/vt323/VT323-Regular.ttf` | `fonts.pixelAlt` |
+| Nhân vật (Pixel Office, 2dPig) | `assets/_raw/pixel-office/...` | `characters.<id>`: `"/_raw/pixel-office/<file>.png"` hoặc `{ "src": ..., "frame": [x, y, w, h] }`. Có 11 id: h1-chu-tu, h1-ba-may, h1-be-na, h2-co-ngan, h2-ong-bao, h2-anh-cua, h2-ha-vy, h3-chi-lam, h3-ong-thuy, h3-anh-khoa, h3-can-bo-thue |
+| Nền văn phòng, bàn, cây | `assets/_raw/pixel-office/...` | `office.background`, `office.desk`, `office.plant` |
+| UI (Kenney) | `assets/_raw/kenney-pixel-ui/...` | `ui.panel`, `ui.button` (chưa dùng trong CSS) |
+
+Vite phục vụ `assets/` như thư mục tĩnh (`publicDir`), nên `/_raw/...` trỏ tới `assets/_raw/...`.
 
 ## Kiểm chứng pháp lý
 - 30/10/2026: mạng của phiên chặn mọi nguồn chính thức và thuvienphapluat.vn (403 tại proxy). **Không đọc được văn bản gốc nào.** Xem OPEN_QUESTIONS.md mục 1–2.
@@ -50,4 +63,21 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 ## Soạn kịch bản
 - Dữ liệu game là JSON trong `data/cases/<hồ-sơ>/`. JSON được sinh bằng `node scripts/build-ho-so-N.mjs` (công cụ soạn, đọc thuế suất từ data/rules, tự tính GTGT, khấu trừ, nộp thuế). Sửa script rồi chạy lại, sau đó `npm test`.
 
+## Trạng thái rule (data/rules)
+| Rule | Trạng thái | Bật? |
+|---|---|---|
+| cit-rate (15/17/20% theo doanh thu năm trước) | verified-secondary | Bật |
+| vat-reduction-8 (GTGT 8%) | verified-secondary | Bật |
+| vat-input-noncash-threshold (từ 5 triệu phải không dùng tiền mặt; mất khấu trừ và mất chi phí được trừ) | verified-secondary | Bật |
+| cit-admin-penalty (tiền phạt, tiền chậm nộp) | verified-secondary | Bật |
+| cit-nonbusiness-depreciation | verified-secondary | Bật |
+| cit-passenger-car-cap (1,6 tỷ) | unverified | Tắt |
+| cit-interest-uncontributed-capital | unverified | Tắt |
+| cit-noncredit-interest-cap (BLDS) | unverified | Tắt |
+| depreciation-frame-tt45 | unverified | Tắt (phương án dự phòng: kịch bản tự cho thời gian khấu hao) |
+| provision-tt48 | unverified | Tắt (phương án dự phòng: kịch bản cho sẵn số phải trích) |
+| invoice-validity | unverified | Tắt |
+
 ## Ghi chú cho phiên sau
+- Lần chạy cuối: `npm test` → 125 test xanh, 1 skip (`tests/tools/inspect.test.ts` là công cụ xem số liệu, chạy bằng `INSPECT=ho-so-1 npx vitest run tests/tools`). `npm run build` xanh.
+- Việc còn mở: (1) đọc văn bản gốc khi mạng cho phép, nâng rule lên verified-primary, thay mẫu BCTC TT 99; (2) đặt asset vào `assets/_raw/` và thử dấu ở `/font-test`.
