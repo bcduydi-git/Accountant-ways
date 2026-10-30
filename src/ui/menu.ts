@@ -5,30 +5,54 @@ import { button, h, mount, toast } from './dom';
 
 export const REGULATION_NOTE = 'Quy định áp dụng tại 30/10/2026';
 
+function modal(...children: HTMLElement[]) {
+  const dlg = h('dialog', {}, ...children, button('Đóng', () => { dlg.close(); dlg.remove(); }));
+  document.body.appendChild(dlg);
+  dlg.showModal?.();
+  return dlg;
+}
+
+/** Xuất tiến độ: tải file .json, kèm ô văn bản để sao chép (trang Artifact chặn tải file). */
 export function downloadSave() {
+  const text = exportSave(app.save);
   try {
-    const blob = new Blob([exportSave(app.save)], { type: 'application/json' });
+    const blob = new Blob([text], { type: 'application/json' });
     const a = h('a', { attrs: { href: URL.createObjectURL(blob), download: `so-sach-nguoi-de-lai-${new Date().toISOString().slice(0, 10)}.json` } });
     document.body.appendChild(a);
     a.click();
     a.remove();
   } catch {
-    toast('Không xuất được file lưu.');
+    // Bỏ qua: vẫn còn cách sao chép bên dưới.
   }
+  const area = h('textarea', { attrs: { id: 'save-export', rows: 10, readonly: true, 'aria-label': 'Nội dung file lưu' }, style: { width: '100%' } });
+  area.value = text;
+  modal(
+    h('h2', { text: 'Xuất tiến độ' }),
+    h('p', { text: 'Nếu trình duyệt không tải file về, hãy sao chép đoạn dưới và lưu thành file .json (hoặc dán thẳng vào ô "Nhập tiến độ" trên máy khác).' }),
+    area,
+    button('Sao chép', () => {
+      navigator.clipboard?.writeText(text).then(() => toast('Đã sao chép.'), () => { area.select(); toast('Hãy bấm Ctrl+C để sao chép.'); });
+    }, 'btn primary'),
+  );
 }
 
 export function importSaveButton(onDone: () => void) {
-  const input = h('input', { attrs: { type: 'file', accept: 'application/json,.json', hidden: true } });
-  input.addEventListener('change', async () => {
-    const f = input.files?.[0];
-    if (!f) return;
-    const r = parseSave(await f.text());
-    if (!r.ok) return toast(r.error);
-    replaceSave(r.data);
-    toast('Đã nhập file lưu.');
-    onDone();
-  });
-  return h('span', {}, input, button('Nhập file lưu', () => input.click()));
+  const open = () => {
+    const input = h('input', { attrs: { type: 'file', accept: 'application/json,.json', id: 'save-import-file' } });
+    const area = h('textarea', { attrs: { id: 'save-import-text', rows: 8, placeholder: 'Dán nội dung file lưu vào đây…', 'aria-label': 'Nội dung file lưu' }, style: { width: '100%' } });
+    const apply = (text: string) => {
+      const r = parseSave(text);
+      if (!r.ok) return toast(r.error);
+      replaceSave(r.data);
+      toast('Đã nhập tiến độ.');
+      dlg.close();
+      dlg.remove();
+      onDone();
+    };
+    input.addEventListener('change', async () => { const f = input.files?.[0]; if (f) apply(await f.text()); });
+    const dlg = modal(h('h2', { text: 'Nhập tiến độ' }), h('p', { text: 'Chọn file .json đã xuất, hoặc dán nội dung vào ô dưới.' }), input, area, button('Nạp đoạn đã dán', () => apply(area.value), 'btn primary'));
+  };
+  return button('Nhập file lưu', open);
 }
 
 export function renderMenu(root: HTMLElement) {
@@ -52,7 +76,7 @@ export function renderMenu(root: HTMLElement) {
             const done = prog ? Object.keys(prog.events).length : 0;
             return h(
               'a',
-              { class: 'case-card', attrs: { href: `#/case/${c.meta.id}` } },
+              { class: 'case-card', attrs: { href: `#${c.meta.id}` } },
               h('div', { class: 'case-type', text: c.meta.type }),
               h('h2', { text: c.meta.title }),
               h('p', { text: c.meta.company.name }),
@@ -67,8 +91,8 @@ export function renderMenu(root: HTMLElement) {
           { class: 'actions' },
           button('Xuất file lưu (.json)', downloadSave),
           importSaveButton(draw),
-          h('a', { class: 'btn', text: 'Quy định & rule', attrs: { href: '#/rules' } }),
-          h('a', { class: 'btn', text: 'Màn debug', attrs: { href: '#/debug' } }),
+          h('a', { class: 'btn', text: 'Quy định & rule', attrs: { href: '#rules' } }),
+          h('a', { class: 'btn', text: 'Màn debug', attrs: { href: '#debug' } }),
           h('a', { class: 'btn', text: 'Thử font', attrs: { href: 'font-test.html' } }),
         ),
         h(

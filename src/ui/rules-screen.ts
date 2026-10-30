@@ -21,7 +21,7 @@ export function renderRules(root: HTMLElement) {
     h(
       'div',
       { class: 'page' },
-      h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Menu', attrs: { href: '#/' } }), h('h1', { text: 'Quy định và rule pháp lý' })),
+      h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Menu', attrs: { href: '#menu' } }), h('h1', { text: 'Quy định và rule pháp lý' })),
       h('p', { text: `${REGULATION_NOTE}. Game không tự cập nhật theo luật mới. Rule chưa kiểm chứng văn bản gốc mặc định TẮT.` }),
       app.rules.warningActive ? h('div', { class: 'warning-banner', text: '⚠ Đang bật rule chưa kiểm chứng (cờ debug).' }) : null,
       h(

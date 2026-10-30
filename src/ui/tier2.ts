@@ -56,7 +56,7 @@ export function renderTier2(root: HTMLElement, caseId: string) {
       h(
         'div',
         { class: 'page' },
-        h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Về hồ sơ', attrs: { href: `#/case/${caseId}` } }), h('h1', { text: `Tầng 2 — Bắt lỗi BCTC · ${rt.meta.company.name}` })),
+        h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Về hồ sơ', attrs: { href: `#${caseId}` } }), h('h1', { text: `Tầng 2 — Bắt lỗi BCTC · ${rt.meta.company.name}` })),
         h('p', { text: an.intro }),
         h('div', { class: 'score-box' }, h('span', {}, 'Hiểu bản chất (Tầng 2): ', h('b', { text: `${points}/${an.anomalies.length * TIER2_POINTS_PER_ANOMALY}` })), h('span', { text: `Đã tìm ${found.length}/${an.anomalies.length} bất thường` }), h('span', { class: 'muted', text: `Còn ${Math.max(0, left)} lượt nộp` })),
         h(

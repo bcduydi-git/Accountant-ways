@@ -179,7 +179,7 @@ export function renderTier3(root: HTMLElement, caseId: string) {
       h(
         'div',
         { class: 'page' },
-        h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Về hồ sơ', attrs: { href: `#/case/${caseId}` } }), h('h1', { text: `Tầng 3 · ${rt.meta.company.name}` })),
+        h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Về hồ sơ', attrs: { href: `#${caseId}` } }), h('h1', { text: `Tầng 3 · ${rt.meta.company.name}` })),
         rt.meta.tiers.tier3Note ? h('p', { class: 'muted', text: rt.meta.tiers.tier3Note }) : null,
         app.rules.warningActive ? h('div', { class: 'warning-banner', text: '⚠ Đang bật rule chưa kiểm chứng (cờ debug): bảng đối chiếu có thể tính cả rule chưa đọc văn bản gốc.' }) : null,
         partA,

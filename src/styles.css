@@ -154,3 +154,14 @@ table.grid select, table.grid input { width: 100%; max-width: 100%; font: inheri
 table.grid td:nth-child(2) { max-width: 520px; }
 table.grid td:nth-child(3) { min-width: 140px; }
 .field input { max-width: 260px; }
+:root { color-scheme: dark; }
+dialog textarea { font-family: ui-monospace, monospace; font-size: 12px; background: #15172a; color: var(--ink); border: 2px solid var(--line); }
+dialog > * + * { margin-top: 8px; }
+table.journal, table.rules, table.grid { display: block; overflow-x: auto; }
+@media (max-width: 600px) {
+  .entry-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .entry-row.head { display: none; }
+  .entry-row .acc { grid-column: 1 / -1; }
+  .pixel-title { font-size: 28px; }
+  .page { padding-left: 16px; padding-right: 16px; }
+}

@@ -60,7 +60,7 @@ export function renderDebug(root: HTMLElement) {
       h(
         'div',
         { class: 'page debug' },
-        h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Menu', attrs: { href: '#/' } }), h('h1', { text: 'Màn debug — nhập bút toán tay' })),
+        h('header', { class: 'page-head' }, h('a', { class: 'btn', text: '← Menu', attrs: { href: '#menu' } }), h('h1', { text: 'Màn debug — nhập bút toán tay' })),
         h('p', { class: 'muted', text: 'Sổ thử độc lập với các hồ sơ. Mọi bút toán đi qua post(); ba báo cáo tính từ sổ cái.' }),
         h(
           'div',

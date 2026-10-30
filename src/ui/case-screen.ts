@@ -308,7 +308,7 @@ export function renderCase(root: HTMLElement, caseId: string) {
         h(
           'header',
           { class: 'page-head' },
-          h('a', { class: 'btn', text: '← Menu', attrs: { href: '#/' } }),
+          h('a', { class: 'btn', text: '← Menu', attrs: { href: '#menu' } }),
           h('h1', { text: `${rt.meta.title}: ${rt.meta.company.name}` }),
         ),
         h(
@@ -317,8 +317,8 @@ export function renderCase(root: HTMLElement, caseId: string) {
           h('span', {}, 'Sổ sạch: ', h('b', { text: `${score.got}/${score.max}` })),
           understanding(rt, caseId),
           h('span', { class: 'muted', text: REGULATION_NOTE }),
-          rt.meta.tiers.tier2 ? h('a', { attrs: { href: `#/case/${caseId}/tier2` }, text: yearDone() ? 'Tầng 2 — Bắt lỗi ▶' : '' }) : null,
-          rt.meta.tiers.tier3a ? h('a', { attrs: { href: `#/case/${caseId}/tier3` }, text: yearDone() ? 'Tầng 3 — Đối chiếu thuế ▶' : '' }) : null,
+          rt.meta.tiers.tier2 ? h('a', { attrs: { href: `#${caseId}-tier2` }, text: yearDone() ? 'Tầng 2 — Bắt lỗi ▶' : '' }) : null,
+          rt.meta.tiers.tier3a ? h('a', { attrs: { href: `#${caseId}-tier3` }, text: yearDone() ? 'Tầng 3 — Đối chiếu thuế ▶' : '' }) : null,
         ),
         app.rules.warningActive ? h('div', { class: 'warning-banner', text: '⚠ Đang bật rule chưa kiểm chứng (cờ debug).' }) : null,
         scene.el,
@@ -344,8 +344,8 @@ export function renderCase(root: HTMLElement, caseId: string) {
               h(
                 'div',
                 { class: 'actions' },
-                rt.meta.tiers.tier2 ? h('a', { class: 'btn primary', text: 'Tầng 2 — Bắt lỗi', attrs: { href: `#/case/${caseId}/tier2` } }) : null,
-                rt.meta.tiers.tier3a ? h('a', { class: 'btn primary', text: rt.meta.tiers.tier3b ? 'Tầng 3 — Đối chiếu và điều chỉnh' : 'Tầng 3 rút gọn — Đối chiếu thuế', attrs: { href: `#/case/${caseId}/tier3` } }) : null,
+                rt.meta.tiers.tier2 ? h('a', { class: 'btn primary', text: 'Tầng 2 — Bắt lỗi', attrs: { href: `#${caseId}-tier2` } }) : null,
+                rt.meta.tiers.tier3a ? h('a', { class: 'btn primary', text: rt.meta.tiers.tier3b ? 'Tầng 3 — Đối chiếu và điều chỉnh' : 'Tầng 3 rút gọn — Đối chiếu thuế', attrs: { href: `#${caseId}-tier3` } }) : null,
               ),
             )
           : null,

@@ -11,20 +11,23 @@ import { applyFonts } from './scene/assets';
 const root = document.getElementById('app')!;
 
 function route() {
-  const hash = location.hash.replace(/^#/, '') || '/';
-  const parts = hash.split('/').filter(Boolean);
+  // Hash dạng tên phẳng (#menu, #rules, #debug, #ho-so-1, #ho-so-1-tier2) để chạy được cả trong trang Artifact.
+  // Vẫn nhận dạng cũ #/case/ho-so-1/tier2.
+  const hash = location.hash.replace(/^#\/?/, '');
+  const old = /^case\/([^/]+)(?:\/(tier2|tier3))?$/.exec(hash);
+  const m = old ? [hash, old[1], old[2]] : /^(ho-so-\d+)(?:-(tier2|tier3))?$/.exec(hash);
   try {
-    if (parts[0] === 'debug') return renderDebug(root);
-    if (parts[0] === 'rules') return renderRules(root);
-    if (parts[0] === 'case' && parts[1]) {
-      if (parts[2] === 'tier2') return renderTier2(root, parts[1]);
-      if (parts[2] === 'tier3') return renderTier3(root, parts[1]);
-      return renderCase(root, parts[1]);
+    if (hash === 'debug') return renderDebug(root);
+    if (hash === 'rules') return renderRules(root);
+    if (m && m[1]) {
+      if (m[2] === 'tier2') return renderTier2(root, m[1]);
+      if (m[2] === 'tier3') return renderTier3(root, m[1]);
+      return renderCase(root, m[1]);
     }
     return renderMenu(root);
   } catch (err) {
     console.error(err);
-    mount(root, h('div', { class: 'page' }, h('h1', { text: 'Có lỗi khi mở màn này' }), h('pre', { text: String(err) }), h('a', { class: 'btn', text: '← Menu', attrs: { href: '#/' } })));
+    mount(root, h('div', { class: 'page' }, h('h1', { text: 'Có lỗi khi mở màn này' }), h('pre', { text: String(err) }), h('a', { class: 'btn', text: '← Menu', attrs: { href: '#menu' } })));
   }
 }
 
