@@ -1,0 +1,290 @@
+{
+  "intro": "BCTC năm 2026 của Lam Thủy (đã khóa sổ), kèm thuyết minh bộ phận, thuyết minh bên liên quan và bảng đối chiếu doanh thu trên tờ khai GTGT. Có 4 bất thường được cài sẵn.",
+  "injections": [
+    {
+      "id": "h3-t2-ban-lien-quan-cuoi-nam",
+      "date": "2026-12-30",
+      "memo": "Bán 5.000 bộ cho Lam Thủy Bắc ngày 30/12, chưa thu tiền",
+      "lines": [
+        {
+          "account": "131",
+          "debit": 1620000000,
+          "partner": "lam-thuy-bac"
+        },
+        {
+          "account": "5112",
+          "credit": 1500000000,
+          "segment": "sx"
+        },
+        {
+          "account": "33311",
+          "credit": 120000000
+        }
+      ]
+    },
+    {
+      "id": "h3-t2-gia-von-lien-quan",
+      "date": "2026-12-30",
+      "memo": "Giá vốn lô bán cho Lam Thủy Bắc",
+      "lines": [
+        {
+          "account": "632",
+          "debit": 1200000000,
+          "segment": "sx"
+        },
+        {
+          "account": "155",
+          "credit": 1200000000,
+          "item": "bo-bat-dia"
+        }
+      ]
+    },
+    {
+      "id": "h3-t2-mua-tru-khan",
+      "date": "2026-12-30",
+      "memo": "Trả trước toàn bộ tiền khăn dự trữ năm 2027 cho Sông Mây",
+      "lines": [
+        {
+          "account": "331",
+          "debit": 15000000000,
+          "partner": "song-may"
+        },
+        {
+          "account": "112",
+          "credit": 15000000000
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "tm-bo-phan",
+      "title": "Thuyết minh: doanh thu thuần theo bộ phận",
+      "columns": [
+        "Bộ phận",
+        "Doanh thu thuần",
+        "Ghi chú"
+      ],
+      "rows": [
+        {
+          "code": "bp-sx",
+          "cells": [
+            "Sản xuất (gốm)",
+            "31.750.000.000",
+            ""
+          ]
+        },
+        {
+          "code": "bp-tm",
+          "cells": [
+            "Thương mại (khăn vải)",
+            "25.860.000.000",
+            "Chưa trừ hàng bán bị trả lại; có cộng nhầm hàng gửi bán"
+          ]
+        },
+        {
+          "code": "bp-tong",
+          "cells": [
+            "Cộng",
+            "57.610.000.000",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tm-lien-quan",
+      "title": "Thuyết minh: giao dịch và số dư với bên liên quan (VAS 26)",
+      "columns": [
+        "Bên liên quan",
+        "Số tiền",
+        "Nội dung"
+      ],
+      "rows": [
+        {
+          "code": "lq-lam-thuy-bac",
+          "cells": [
+            "Gốm Lam Thủy Bắc (công ty chị em)",
+            "2.954.000.000",
+            "Phải thu cuối năm; giá bán 300.000/bộ, thấp hơn giá bán cho khách độc lập (400.000/bộ); không thời hạn thanh toán"
+          ]
+        },
+        {
+          "code": "lq-ong-thuy",
+          "cells": [
+            "Ông Lâm Thủy (cổ đông lớn)",
+            "5.000.000.000",
+            "Khoản vay dài hạn, lãi 12%/năm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tm-to-khai",
+      "title": "Đối chiếu doanh thu chịu thuế trên tờ khai GTGT với sổ kế toán",
+      "columns": [
+        "Kỳ",
+        "Doanh thu trên tờ khai",
+        "Ghi chú"
+      ],
+      "rows": [
+        {
+          "code": "tk-q1",
+          "cells": [
+            "Quý 1",
+            "12.600.000.000",
+            "Khớp sổ"
+          ]
+        },
+        {
+          "code": "tk-q2",
+          "cells": [
+            "Quý 2",
+            "13.560.000.000",
+            "Khớp sổ (đã trừ hàng trả lại)"
+          ]
+        },
+        {
+          "code": "tk-q3",
+          "cells": [
+            "Quý 3",
+            "13.550.000.000",
+            "Khớp sổ"
+          ]
+        },
+        {
+          "code": "tk-q4",
+          "cells": [
+            "Quý 4",
+            "15.600.000.000",
+            "Theo hóa đơn đã kê khai"
+          ]
+        }
+      ]
+    }
+  ],
+  "reasons": [
+    {
+      "id": "r-lien-quan",
+      "text": "Phải thu bên liên quan lớn, tăng nhanh, giá ưu đãi và không thời hạn: rủi ro doanh thu không thực chất, vốn bị chiếm dụng."
+    },
+    {
+      "id": "r-thuyet-minh",
+      "text": "Số liệu thuyết minh không khớp báo cáo chính: tổng doanh thu các bộ phận khác dòng doanh thu thuần trên KQKD."
+    },
+    {
+      "id": "r-to-khai",
+      "text": "Doanh thu trên tờ khai GTGT thấp hơn doanh thu trên sổ: có hóa đơn hoặc giao dịch chưa kê khai thuế."
+    },
+    {
+      "id": "r-lctt-am",
+      "text": "Lưu chuyển tiền thuần từ hoạt động kinh doanh âm trong khi KQKD có lãi: lợi nhuận chưa chuyển thành tiền (phải thu, trả trước, tồn kho)."
+    },
+    {
+      "id": "r-khau-hao",
+      "text": "Khấu hao vượt khung thời gian theo quy định thuế."
+    },
+    {
+      "id": "r-von-gop",
+      "text": "Vốn góp chưa đủ trong khi lãi vay lớn."
+    },
+    {
+      "id": "r-giam-tru",
+      "text": "Hàng bán bị trả lại được ghi giảm thẳng doanh thu."
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "h3-a1",
+      "title": "Phải thu bên liên quan lớn",
+      "pattern": "phải thu/phải trả bên liên quan lớn",
+      "lineRefs": [
+        {
+          "report": "TM",
+          "code": "lq-lam-thuy-bac"
+        },
+        {
+          "report": "CĐKT",
+          "code": "131"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT",
+        "TM"
+      ],
+      "reasonId": "r-lien-quan",
+      "explanation": "Phải thu Lam Thủy Bắc lên gần 3 tỷ, gồm lô 5.000 bộ bán ngày 30/12 với giá ưu đãi, không thời hạn thanh toán. Thuyết minh VAS 26 cho thấy bản chất mà dòng 131 trên CĐKT che mất."
+    },
+    {
+      "id": "h3-a2",
+      "title": "Thuyết minh bộ phận không khớp KQKD",
+      "pattern": "thuyết minh không khớp báo cáo",
+      "lineRefs": [
+        {
+          "report": "TM",
+          "code": "bp-tm"
+        },
+        {
+          "report": "TM",
+          "code": "bp-tong"
+        },
+        {
+          "report": "KQKD",
+          "code": "10"
+        }
+      ],
+      "reportsTouched": [
+        "KQKD",
+        "TM"
+      ],
+      "reasonId": "r-thuyet-minh",
+      "explanation": "Tổng doanh thu các bộ phận lớn hơn doanh thu thuần trên KQKD khoảng 800 triệu: bộ phận TM chưa trừ hàng bán bị trả lại và cộng nhầm hàng gửi bán. Vì engine lập KQKD từ sổ cái nên lệch là ở thuyết minh."
+    },
+    {
+      "id": "h3-a3",
+      "title": "Tờ khai GTGT thấp hơn sổ",
+      "pattern": "đối chiếu BCTC với tờ khai thuế",
+      "lineRefs": [
+        {
+          "report": "TM",
+          "code": "tk-q4"
+        },
+        {
+          "report": "KQKD",
+          "code": "01"
+        }
+      ],
+      "reportsTouched": [
+        "KQKD",
+        "TM"
+      ],
+      "reasonId": "r-to-khai",
+      "explanation": "Cộng 4 quý trên tờ khai thấp hơn doanh thu thuần trên KQKD (dòng 10) đúng 1.500.000.000: lô bán cho công ty chị em ngày 30/12 đã ghi sổ nhưng chưa kê khai thuế GTGT quý 4."
+    },
+    {
+      "id": "h3-a4",
+      "title": "Lãi nhưng tiền từ hoạt động kinh doanh âm",
+      "pattern": "LCTT từ HĐKD âm trong khi có lãi",
+      "lineRefs": [
+        {
+          "report": "LCTT",
+          "code": "20"
+        },
+        {
+          "report": "KQKD",
+          "code": "60"
+        },
+        {
+          "report": "CĐKT",
+          "code": "132"
+        }
+      ],
+      "reportsTouched": [
+        "LCTT",
+        "KQKD"
+      ],
+      "reasonId": "r-lctt-am",
+      "explanation": "KQKD lãi lớn nhưng tiền thuần từ HĐKD âm vì công ty trả trước 15 tỷ tiền khăn của năm sau (dòng \"Trả trước cho người bán\") và tăng phải thu bên liên quan. Đây đúng là bài \"lãi mà âm tiền\"."
+    }
+  ]
+}

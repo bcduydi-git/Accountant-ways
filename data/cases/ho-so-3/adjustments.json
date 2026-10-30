@@ -1,0 +1,155 @@
+{
+  "reconciliation": {
+    "intro": "Bảng đối chiếu đầy đủ. Giao dịch bên liên quan (giá ưu đãi, lãi vay cổ đông) chỉ thuyết minh, không điều chỉnh thuế: chuyển giá và trần lãi vay nằm ngoài phạm vi \"Vừa\" hoặc chưa kiểm chứng."
+  },
+  "companyBook": {
+    "intro": "Sổ của kế toán cũ lập cho mục đích thuế: bằng sổ của bạn cộng thêm hai bút toán (khoản cho công ty chị em vay ghi vào phải thu khách hàng; ghi doanh thu lô hàng giao năm 2027). Còn hai việc chưa xử lý: khăn mốc và nợ khó đòi của công ty chị em.",
+    "injections": [
+      {
+        "id": "h3-cb-cho-vay",
+        "date": "2026-09-15",
+        "memo": "Chuyển 1,5 tỷ cho Gốm Lam Thủy Bắc vay (kế toán cũ ghi Nợ 131)",
+        "lines": [
+          {
+            "account": "131",
+            "debit": 1500000000,
+            "partner": "lam-thuy-bac"
+          },
+          {
+            "account": "112",
+            "credit": 1500000000
+          }
+        ]
+      },
+      {
+        "id": "h3-cb-doanh-thu-som",
+        "date": "2026-12-31",
+        "memo": "Ghi doanh thu lô khăn giao ngày 05/01/2027 (chưa xuất hóa đơn)",
+        "lines": [
+          {
+            "account": "131",
+            "debit": 400000000,
+            "partner": "nha-xinh"
+          },
+          {
+            "account": "5111",
+            "credit": 400000000,
+            "segment": "tm"
+          }
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "h3-adj-cho-vay",
+      "category": "related-loan-reclass",
+      "title": "Khoản cho công ty chị em vay nằm trong phải thu khách hàng",
+      "evidence": [
+        "Hợp đồng vay ngày 15/09/2026: Lam Thủy cho Gốm Lam Thủy Bắc vay 1.500.000.000, 12 tháng, không lãi.",
+        "Không có hóa đơn bán hàng nào tương ứng; kế toán cũ ghi Nợ 131 (Lam Thủy Bắc)."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "1283",
+                "debit": 1500000000,
+                "partner": "lam-thuy-bac"
+              },
+              {
+                "account": "131",
+                "credit": 1500000000,
+                "partner": "lam-thuy-bac"
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Phân loại lại: Nợ 1283 (cho vay) / Có 131 (Lam Thủy Bắc) 1.500.000.000. Lợi nhuận không đổi nhưng CĐKT đúng bản chất: phải thu thương mại giảm, đầu tư tài chính (cho vay) tăng. Trên LCTT, khoản chi này thuộc hoạt động đầu tư chứ không phải kinh doanh. Phải thuyết minh bên liên quan."
+    },
+    {
+      "id": "h3-adj-sai-ky",
+      "category": "revenue-cutoff",
+      "title": "Doanh thu ghi sớm của lô giao năm 2027",
+      "evidence": [
+        "Biên bản giao hàng ngày 05/01/2027 cho Nhà Xinh: 2.000 khăn.",
+        "Kế toán cũ ghi Nợ 131 / Có 5111 (TM) 400.000.000 vào ngày 31/12/2026; hàng vẫn ở kho tại 31/12."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "5111",
+                "debit": 400000000,
+                "segment": "tm"
+              },
+              {
+                "account": "131",
+                "credit": 400000000,
+                "partner": "nha-xinh"
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Hủy doanh thu ghi sai kỳ: Nợ 5111 (TM) / Có 131 (Nhà Xinh) 400.000.000. Không dùng 521 vì đây không phải hàng bán bị trả lại hay chiết khấu; đây là doanh thu chưa phát sinh trong năm 2026."
+    },
+    {
+      "id": "h3-adj-khan-moc",
+      "category": "damaged-inventory",
+      "title": "Khăn bị mốc trong kho chưa xử lý",
+      "evidence": [
+        "Biên bản kiểm kê 31/12: 300 khăn bị mốc, không bán được, giá gốc 45.000.000.",
+        "Không có bồi thường."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "632",
+                "debit": 45000000,
+                "segment": "tm"
+              },
+              {
+                "account": "156",
+                "credit": 45000000,
+                "item": "khan-ban"
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Nợ 632 (TM) / Có 156 (khăn) 45.000.000. Ghi đúng mảng TM để báo cáo bộ phận phản ánh đúng."
+    },
+    {
+      "id": "h3-adj-du-phong",
+      "category": "provision-overdue",
+      "title": "Nợ quá hạn của công ty chị em",
+      "evidence": [
+        "Phải thu Lam Thủy Bắc còn 200.000.000 nợ từ năm 2025, quá hạn hơn 12 tháng.",
+        "Biên bản họp: trích dự phòng 100.000.000 (số kịch bản cho sẵn; game không áp tỷ lệ TT 48/2019)."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "642",
+                "debit": 100000000
+              },
+              {
+                "account": "2293",
+                "credit": 100000000
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Nợ 642 / Có 2293 100.000.000. Bên liên quan không phải lý do để bỏ qua dự phòng."
+    }
+  ]
+}

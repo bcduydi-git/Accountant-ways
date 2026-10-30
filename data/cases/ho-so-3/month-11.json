@@ -1,0 +1,706 @@
+{
+  "id": "month-11",
+  "label": "Tháng 11",
+  "intro": [],
+  "outro": [],
+  "events": [
+    {
+      "id": "h3-m11-mua-nvl",
+      "date": "2026-11-03",
+      "title": "Mua đất sét, men cho mảng sản xuất tháng 11",
+      "speaker": "h3-anh-khoa",
+      "narrative": "Nhập đất sét và men đủ cho 7.000 bộ bát đĩa của Bạch Mã, trả vào tháng sau.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty Đất Sét Bạch Mã → Công ty Cổ phần Bàn Ăn Lam Thủy",
+          "rows": [
+            [
+              "Đất sét và men (định mức theo bộ) — 7.000 bộ × 160.000",
+              "1.120.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "1.120.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "89.600.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "1.209.600.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 152 (đất, men) 1.120.000.000, Nợ 1331 89.600.000 / Có 331 (Bạch Mã) 1.209.600.000.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 1209600000,
+          "paymentMethod": "credit"
+        },
+        "vat": {
+          "base": 1120000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "152",
+                "debit": 1120000000,
+                "item": "dat-men"
+              },
+              {
+                "account": "1331",
+                "debit": 89600000
+              },
+              {
+                "account": "331",
+                "credit": 1209600000,
+                "partner": "bach-ma"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-mua-khan",
+      "date": "2026-11-04",
+      "title": "Mua khăn trải bàn cho mảng thương mại tháng 11",
+      "speaker": "h3-anh-khoa",
+      "narrative": "Nhập 12.000 khăn trải bàn của Sông Mây, 150.000/chiếc, trả vào tháng sau.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty Dệt May Sông Mây → Công ty Cổ phần Bàn Ăn Lam Thủy",
+          "rows": [
+            [
+              "Khăn trải bàn vải — 12.000 chiếc × 150.000",
+              "1.800.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "1.800.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "144.000.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "1.944.000.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 156 (khăn) 1.800.000.000, Nợ 1331 144.000.000 / Có 331 (Sông Mây) 1.944.000.000. Hàng mua để bán lại (mảng thương mại) vào 156, khác với nguyên liệu sản xuất vào 152.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 1944000000,
+          "paymentMethod": "credit"
+        },
+        "vat": {
+          "base": 1800000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "156",
+                "debit": 1800000000,
+                "item": "khan-ban"
+              },
+              {
+                "account": "1331",
+                "debit": 144000000
+              },
+              {
+                "account": "331",
+                "credit": 1944000000,
+                "partner": "song-may"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-cong-no",
+      "date": "2026-11-10",
+      "title": "Thu tiền khách, trả nhà cung cấp",
+      "speaker": "h3-chi-lam",
+      "narrative": "Nhà Xinh trả 5.400.000.000. Công ty trả Bạch Mã 1.209.600.000 và Sông Mây 1.782.000.000.",
+      "documents": [
+        {
+          "kind": "Sao kê ngân hàng",
+          "rows": [
+            [
+              "Thu từ Chuỗi Siêu thị Nhà Xinh",
+              "5.400.000.000"
+            ],
+            [
+              "Chi cho Công ty Đất Sét Bạch Mã",
+              "1.209.600.000"
+            ],
+            [
+              "Chi cho Công ty Dệt May Sông Mây",
+              "1.782.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Mỗi đối tượng công nợ một dòng chi tiết; không bù trừ phải thu với phải trả.",
+      "explanation": "Nợ 112 / Có 131 (Nhà Xinh); Nợ 331 (Bạch Mã), Nợ 331 (Sông Mây) / Có 112.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Thu tiền Nhà Xinh",
+            "lines": [
+              {
+                "account": "112",
+                "debit": 5400000000
+              },
+              {
+                "account": "131",
+                "credit": 5400000000,
+                "partner": "nha-xinh"
+              }
+            ]
+          },
+          {
+            "memo": "Trả Bạch Mã, Sông Mây",
+            "lines": [
+              {
+                "account": "331",
+                "debit": 1209600000,
+                "partner": "bach-ma"
+              },
+              {
+                "account": "331",
+                "debit": 1782000000,
+                "partner": "song-may"
+              },
+              {
+                "account": "112",
+                "credit": 2991600000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-nop-gtgt",
+      "date": "2026-11-20",
+      "title": "Nộp thuế GTGT tháng 10",
+      "speaker": "h3-chi-lam",
+      "narrative": "Nộp thuế GTGT còn phải nộp của tháng 10: 178.400.000, chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Giấy nộp tiền vào ngân sách",
+          "rows": [
+            [
+              "Nội dung",
+              "Thuế GTGT tháng 10"
+            ],
+            [
+              "Số tiền",
+              "178.400.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 33311 / Có 112 178.400.000. Không ảnh hưởng KQKD.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 178400000
+              },
+              {
+                "account": "112",
+                "credit": 178400000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-luong",
+      "date": "2026-11-28",
+      "title": "Tính và trả lương tháng 11",
+      "speaker": "h3-chi-lam",
+      "narrative": "Bảng lương: công nhân trực tiếp 300.000.000, quản lý xưởng 100.000.000, bán hàng mảng SX 60.000.000, bán hàng mảng TM 60.000.000, văn phòng 200.000.000. Trả ngay bằng chuyển khoản. (Giản lược: chưa xét bảo hiểm, thuế TNCN.)",
+      "documents": [
+        {
+          "kind": "Bảng lương",
+          "rows": [
+            [
+              "Công nhân trực tiếp (SX)",
+              "300.000.000"
+            ],
+            [
+              "Quản lý xưởng (SX)",
+              "100.000.000"
+            ],
+            [
+              "Bán hàng mảng SX",
+              "60.000.000"
+            ],
+            [
+              "Bán hàng mảng TM",
+              "60.000.000"
+            ],
+            [
+              "Văn phòng",
+              "200.000.000"
+            ],
+            [
+              "Cộng",
+              "720.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Chi phí bán hàng ghi theo mảng (mã chi tiết SX/TM).",
+      "explanation": "Nợ 622 300.000.000, Nợ 627 100.000.000, Nợ 641 (SX) 60.000.000, Nợ 641 (TM) 60.000.000, Nợ 642 200.000.000 / Có 334; rồi Nợ 334 / Có 112.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Tính lương",
+            "lines": [
+              {
+                "account": "622",
+                "debit": 300000000
+              },
+              {
+                "account": "627",
+                "debit": 100000000
+              },
+              {
+                "account": "641",
+                "debit": 60000000,
+                "segment": "sx"
+              },
+              {
+                "account": "641",
+                "debit": 60000000,
+                "segment": "tm"
+              },
+              {
+                "account": "642",
+                "debit": 200000000
+              },
+              {
+                "account": "334",
+                "credit": 720000000
+              }
+            ]
+          },
+          {
+            "memo": "Trả lương",
+            "lines": [
+              {
+                "account": "334",
+                "debit": 720000000
+              },
+              {
+                "account": "112",
+                "credit": 720000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-khau-hao",
+      "date": "2026-11-30",
+      "title": "Khấu hao TSCĐ tháng 11",
+      "speaker": "h3-chi-lam",
+      "narrative": "Khấu hao lò nung 50.000.000, máy ép 7.500.000 (xưởng); văn phòng và xe tải 30.000.000, căn hộ cho gia đình chủ tịch ở 12.000.000 (quản lý).",
+      "documents": [
+        {
+          "kind": "Bảng tính khấu hao",
+          "rows": [
+            [
+              "Lò nung, dây chuyền (xưởng)",
+              "50.000.000"
+            ],
+            [
+              "Máy ép (xưởng)",
+              "7.500.000"
+            ],
+            [
+              "Văn phòng, xe tải (quản lý)",
+              "30.000.000"
+            ],
+            [
+              "Căn hộ cho gia đình chủ tịch (quản lý)",
+              "12.000.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 627 57.500.000, Nợ 642 42.000.000 / Có 2141 99.500.000. Căn hộ cho gia đình chủ tịch ở không phục vụ SXKD: khấu hao không được trừ khi tính thuế TNDN.",
+      "attrs": {
+        "depreciation": [
+          {
+            "assetId": "lo-nung",
+            "amount": 50000000
+          },
+          {
+            "assetId": "van-phong-xe",
+            "amount": 30000000
+          },
+          {
+            "assetId": "can-ho",
+            "amount": 12000000
+          },
+          {
+            "assetId": "may-ep",
+            "amount": 7500000
+          }
+        ]
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "627",
+                "debit": 57500000
+              },
+              {
+                "account": "642",
+                "debit": 42000000
+              },
+              {
+                "account": "2141",
+                "credit": 99500000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-gia-thanh",
+      "date": "2026-11-30",
+      "title": "Giá thành 7.000 bộ bát đĩa",
+      "speaker": "h3-anh-khoa",
+      "narrative": "Xuất đất, men (1.120.000.000) cho sản xuất; tập hợp 621, 622, 627 vào 154; nhập kho 7.000 bộ bát đĩa hoàn thành (không có dở dang).",
+      "documents": [
+        {
+          "kind": "Phiếu tính giá thành",
+          "rows": [
+            [
+              "621",
+              "1.120.000.000"
+            ],
+            [
+              "622",
+              "300.000.000"
+            ],
+            [
+              "627",
+              "157.500.000"
+            ],
+            [
+              "Giá thành hoàn thành",
+              "1.577.500.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 621 / Có 152 1.120.000.000; Nợ 154 / Có 621, 622, 627 1.577.500.000; Nợ 155 / Có 154 1.577.500.000. Chỉ mảng sản xuất có giá thành; mảng thương mại đi thẳng 156 → 632.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Xuất NVL",
+            "lines": [
+              {
+                "account": "621",
+                "debit": 1120000000
+              },
+              {
+                "account": "152",
+                "credit": 1120000000,
+                "item": "dat-men"
+              }
+            ]
+          },
+          {
+            "memo": "Tập hợp chi phí",
+            "lines": [
+              {
+                "account": "154",
+                "debit": 1577500000
+              },
+              {
+                "account": "621",
+                "credit": 1120000000
+              },
+              {
+                "account": "622",
+                "credit": 300000000
+              },
+              {
+                "account": "627",
+                "credit": 157500000
+              }
+            ]
+          },
+          {
+            "memo": "Nhập kho",
+            "lines": [
+              {
+                "account": "155",
+                "debit": 1577500000,
+                "item": "bo-bat-dia"
+              },
+              {
+                "account": "154",
+                "credit": 1577500000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-ban-sx",
+      "date": "2026-11-30",
+      "title": "Bán 7.000 bộ bát đĩa cho Nhà Xinh (mảng SX)",
+      "speaker": "h3-anh-khoa",
+      "narrative": "Giao 7.000 bộ bát đĩa cho Nhà Xinh, 400.000/bộ, thu tiền ngày 10 tháng sau.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "rows": [
+            [
+              "Bộ bát đĩa gốm — 7.000 × 400.000",
+              "2.800.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "224.000.000"
+            ],
+            [
+              "Tổng",
+              "3.024.000.000"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Giá vốn (giá thành lô tháng)",
+              "1.577.500.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Doanh thu bán sản phẩm (5112) và giá vốn ghi mã mảng SX.",
+      "explanation": "Nợ 131 (Nhà Xinh) / Có 5112 (SX) 2.800.000.000, Có 33311 224.000.000; Nợ 632 (SX) / Có 155 1.577.500.000. Mã mảng giúp lập báo cáo bộ phận từ cùng một sổ cái.",
+      "attrs": {
+        "vat": {
+          "base": 2800000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 3024000000,
+                "partner": "nha-xinh"
+              },
+              {
+                "account": "5112",
+                "credit": 2800000000,
+                "segment": "sx"
+              },
+              {
+                "account": "33311",
+                "credit": 224000000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 1577500000,
+                "segment": "sx"
+              },
+              {
+                "account": "155",
+                "credit": 1577500000,
+                "item": "bo-bat-dia"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-ban-tm",
+      "date": "2026-11-30",
+      "title": "Bán 12.000 khăn trải bàn cho Nhà Xinh (mảng TM)",
+      "speaker": "h3-anh-khoa",
+      "narrative": "Giao 12.000 khăn trải bàn cho Nhà Xinh, 200.000/chiếc, thu tiền ngày 10 tháng sau.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "rows": [
+            [
+              "Khăn trải bàn — 12.000 × 200.000",
+              "2.400.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "192.000.000"
+            ],
+            [
+              "Tổng",
+              "2.592.000.000"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Giá vốn",
+              "1.800.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Doanh thu bán hàng hóa (5111) và giá vốn ghi mã mảng TM.",
+      "explanation": "Nợ 131 (Nhà Xinh) / Có 5111 (TM) 2.400.000.000, Có 33311 192.000.000; Nợ 632 (TM) / Có 156 1.800.000.000.",
+      "attrs": {
+        "vat": {
+          "base": 2400000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 2592000000,
+                "partner": "nha-xinh"
+              },
+              {
+                "account": "5111",
+                "credit": 2400000000,
+                "segment": "tm"
+              },
+              {
+                "account": "33311",
+                "credit": 192000000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 1800000000,
+                "segment": "tm"
+              },
+              {
+                "account": "156",
+                "credit": 1800000000,
+                "item": "khan-ban"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h3-m11-khau-tru",
+      "date": "2026-11-30",
+      "title": "Khấu trừ thuế GTGT tháng 11",
+      "speaker": "h3-chi-lam",
+      "narrative": "Lập tờ khai GTGT tháng 11: thuế đầu vào được khấu trừ 233.600.000, thuế đầu ra 416.000.000. Bù trừ phần được khấu trừ.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ",
+              "233.600.000"
+            ],
+            [
+              "Thuế GTGT đầu ra",
+              "416.000.000"
+            ],
+            [
+              "Số khấu trừ trong kỳ",
+              "233.600.000"
+            ],
+            [
+              "Còn phải nộp",
+              "182.400.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nợ thuế GTGT đầu ra / Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Nợ 33311 / Có 1331 233.600.000. Còn phải nộp 182.400.000, nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 233600000
+              },
+              {
+                "account": "1331",
+                "credit": 233600000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

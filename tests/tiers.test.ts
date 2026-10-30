@@ -39,3 +39,46 @@ describe('Tầng 3 rút gọn — đối chiếu LN kế toán → TNCT khớp e
     expect(bad.lineResults.filter((x) => !x.ok).length).toBe(2);
   });
 });
+
+describe('Hồ sơ 3 — bên liên quan, giảm trừ, phân loại lại', () => {
+  const rt3 = new CaseRuntime(loadCase('ho-so-3'));
+  it('hàng bán bị trả lại ghi Nợ thẳng 5111 bị chặn bởi quy tắc bản chất', () => {
+    const l = rt3.canonicalLedger('h3-m06-ban-tm');
+    const ev = rt3.events.find((r) => r.event.id === 'h3-m06-hang-tra-lai')!.event;
+    const wrong = [
+      { lines: [{ account: '5111', debit: 40_000_000, segment: 'tm' }, { account: '33311', debit: 3_200_000 }, { account: '131', credit: 43_200_000, partner: 'nha-xinh' }] },
+      { lines: [{ account: '156', debit: 30_000_000, item: 'khan-ban' }, { account: '632', credit: 30_000_000, segment: 'tm' }] },
+    ];
+    const r = rt3.score(ev, l, wrong);
+    expect(r.correct).toBe(false);
+    expect(rt3.score(ev, l, rt3.resolveAnswers(ev, l)[0]!).correct).toBe(true);
+  });
+  it('sai mảng (SX thay vì TM) bị chấm sai', () => {
+    const l = rt3.canonicalLedger('h3-m01-ban-sx');
+    const ev = rt3.events.find((r) => r.event.id === 'h3-m01-ban-tm')!.event;
+    const ans = rt3.resolveAnswers(ev, l)[0]!.map((e) => ({ lines: e.lines.map((x) => (x.segment ? { ...x, segment: 'sx' } : x)) }));
+    expect(rt3.score(ev, l, ans).correct).toBe(false);
+  });
+  it('Tầng 3b có phân loại lại khoản cho bên liên quan vay; Tầng 2 có bất thường bên liên quan và tờ khai GTGT', () => {
+    expect(rt3.bundle.adjustments!.items.map((i) => i.category)).toContain('related-loan-reclass');
+    const pats = rt3.bundle.anomalies!.anomalies.map((a) => a.pattern);
+    expect(pats).toContain('phải thu/phải trả bên liên quan lớn');
+    expect(pats).toContain('đối chiếu BCTC với tờ khai thuế');
+    expect(rt3.meta.partners.filter((p) => p.relatedParty).length).toBeGreaterThanOrEqual(2);
+  });
+});
+
+describe('KQKD theo mảng', () => {
+  it('tổng các mảng + chưa phân bổ = KQKD toàn công ty', async () => {
+    const { incomeStatementBySegment } = await import('../src/engine/reports');
+    const rt3 = new CaseRuntime(loadCase('ho-so-3'));
+    const l = rt3.canonicalLedger();
+    const r = incomeStatementBySegment(rt3.ctx, l.entries, ['sx', 'tm']);
+    for (const line of r.total) {
+      const sum = r.cols.reduce((s, c) => s + c.lines.find((x) => x.code === line.code)!.value, 0) + r.unallocated.find((x) => x.code === line.code)!.value;
+      expect(sum, line.code).toBe(line.value);
+    }
+    expect(r.cols[0]!.lines.find((x) => x.code === '01')!.value).toBeGreaterThan(0);
+    expect(r.cols[1]!.lines.find((x) => x.code === '02')!.value).toBe(40_000_000);
+  });
+});

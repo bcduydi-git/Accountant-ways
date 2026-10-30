@@ -1,0 +1,156 @@
+{
+  "date": "2026-01-01",
+  "balances": [
+    {
+      "account": "111",
+      "debit": 200000000
+    },
+    {
+      "account": "112",
+      "debit": 3000000000
+    },
+    {
+      "account": "131",
+      "debit": 4000000000,
+      "partner": "nha-xinh"
+    },
+    {
+      "account": "131",
+      "debit": 1200000000,
+      "partner": "lam-thuy-bac"
+    },
+    {
+      "account": "152",
+      "debit": 500000000,
+      "item": "dat-men"
+    },
+    {
+      "account": "155",
+      "debit": 1200000000,
+      "item": "bo-bat-dia"
+    },
+    {
+      "account": "156",
+      "debit": 1500000000,
+      "item": "khan-ban"
+    },
+    {
+      "account": "211",
+      "debit": 13200000000
+    },
+    {
+      "account": "2141",
+      "credit": 1104000000
+    },
+    {
+      "account": "331",
+      "credit": 900000000,
+      "partner": "bach-ma"
+    },
+    {
+      "account": "331",
+      "credit": 1200000000,
+      "partner": "song-may"
+    },
+    {
+      "account": "33311",
+      "credit": 300000000
+    },
+    {
+      "account": "3334",
+      "credit": 400000000
+    },
+    {
+      "account": "4111",
+      "credit": 20000000000
+    },
+    {
+      "account": "4211",
+      "credit": 896000000
+    }
+  ],
+  "priorYearRevenue": 65000000000,
+  "charterCapital": {
+    "registered": 20000000000,
+    "contributed": 20000000000
+  },
+  "priorYearIncomeStatement": {
+    "11": 52000000000,
+    "21": 40000000,
+    "22": 0,
+    "25": 1500000000,
+    "26": 3200000000,
+    "31": 0,
+    "32": 20000000,
+    "51": 1604000000,
+    "01": 65000000000,
+    "02": 300000000
+  },
+  "inventory": [
+    {
+      "account": "152",
+      "item": "dat-men",
+      "qty": 3125,
+      "unitCost": 160000
+    },
+    {
+      "account": "155",
+      "item": "bo-bat-dia",
+      "qty": 5000,
+      "unitCost": 240000
+    },
+    {
+      "account": "156",
+      "item": "khan-ban",
+      "qty": 10000,
+      "unitCost": 150000
+    }
+  ],
+  "fixedAssets": [
+    {
+      "id": "lo-nung",
+      "name": "Lò nung và dây chuyền tạo hình gốm",
+      "account": "211",
+      "cost": 6000000000,
+      "accumulated": 600000000,
+      "monthlyDepreciation": 50000000,
+      "usefulLifeMonths": 120,
+      "type": "general",
+      "businessUse": true
+    },
+    {
+      "id": "van-phong-xe",
+      "name": "Văn phòng làm việc và xe tải giao hàng",
+      "account": "211",
+      "cost": 3600000000,
+      "accumulated": 360000000,
+      "monthlyDepreciation": 30000000,
+      "usefulLifeMonths": 120,
+      "type": "general",
+      "businessUse": true
+    },
+    {
+      "id": "can-ho",
+      "name": "Căn hộ cho gia đình chủ tịch ở",
+      "account": "211",
+      "cost": 3600000000,
+      "accumulated": 144000000,
+      "monthlyDepreciation": 12000000,
+      "usefulLifeMonths": 300,
+      "type": "general",
+      "businessUse": false
+    },
+    {
+      "id": "may-ep",
+      "name": "Máy ép tạo hình gốm",
+      "account": "211",
+      "cost": 900000000,
+      "accumulated": 0,
+      "monthlyDepreciation": 7500000,
+      "usefulLifeMonths": 120,
+      "type": "general",
+      "businessUse": true,
+      "acquiredInYear": true
+    }
+  ]
+}

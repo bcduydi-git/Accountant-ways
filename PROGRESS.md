@@ -27,7 +27,9 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 - Ghi chú: dự phòng dùng số kịch bản cho sẵn (TT 48 chưa đọc); thời gian khấu hao do kịch bản cho, không chấm khung TT 45; trần ô tô 1,6 tỷ là rule unverified đang TẮT
 
 ### M4 — Hồ sơ 3
-- [ ] Như M3 + bên liên quan
+- [x] Hồ sơ 3 đủ 12 tháng (135 nghiệp vụ): hai mảng SX/TM trên một sổ theo mã mảng (511, 521, 632, 641), có bảng KQKD theo mảng; hàng bán bị trả lại (521, quy tắc bản chất cấm ghi Nợ 5111); cổ đông cho vay; bán cho công ty chị em giá ưu đãi
+- [x] Tầng 2: 4 bất thường (phải thu bên liên quan lớn, thuyết minh bộ phận không khớp KQKD, tờ khai GTGT thấp hơn sổ, lãi nhưng LCTT KD âm)
+- [x] Tầng 3 (a) khớp engine; (b) 4 điều chỉnh gồm phân loại lại khoản cho bên liên quan vay (131 → 1283), doanh thu sai kỳ, khăn mốc, dự phòng
 
 ### M5 — Asset
 - [ ] Font đủ dấu (trang /font-test)

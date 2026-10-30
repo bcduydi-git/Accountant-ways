@@ -1,7 +1,7 @@
 import { accountLabel, isProfitAndLoss } from '../engine/coa';
 import { formatVND } from '../engine/format';
 import { detailBalances, Ledger, parseDetailKey, PostingError } from '../engine/ledger';
-import { computeReports, incomeStatementFromValues, openingBalanceSheet, type Reports } from '../engine/reports';
+import { computeReports, incomeStatementBySegment, incomeStatementFromValues, openingBalanceSheet, type Reports } from '../engine/reports';
 import type { LineInput } from '../engine/types';
 import { loadCase } from '../data/registry';
 import type { ScenarioEvent } from '../data/schema';
@@ -394,6 +394,7 @@ export function renderCase(root: HTMLElement, caseId: string) {
               return cb;
             })(), ' Hiện cột năm trước'),
             reportsBox,
+            rt.meta.segments.length ? segmentTable(rt, ledger) : null,
           ),
         ),
       ),
@@ -403,6 +404,29 @@ export function renderCase(root: HTMLElement, caseId: string) {
   const pendingAttempts: Record<string, number> = {};
   let lastResult: { eventId: string; ok: boolean; before: Reports } | null = null;
   draw();
+}
+
+function segmentTable(rt: CaseRuntime, ledger: Ledger) {
+  const r = incomeStatementBySegment(rt.ctx, ledger.entries, rt.meta.segments.map((s) => s.id));
+  const codes = ['01', '02', '10', '11', '20', '25'];
+  return h(
+    'div',
+    { class: 'reports', style: { marginTop: '10px' } },
+    h('h4', { text: 'KQKD theo mảng (từ mã chi tiết trên cùng sổ cái)' }),
+    h(
+      'table',
+      { class: 'report' },
+      h('thead', {}, h('tr', {}, h('th', { text: 'Chỉ tiêu' }), ...rt.meta.segments.map((s) => h('th', { class: 'num', text: s.name })), h('th', { class: 'num', text: 'Chưa phân bổ' }), h('th', { class: 'num', text: 'Tổng' }))),
+      h(
+        'tbody',
+        {},
+        ...codes.map((c) => {
+          const t = r.total.find((x) => x.code === c)!;
+          return h('tr', {}, h('td', { text: t.label }), ...r.cols.map((col) => h('td', { class: 'num', text: formatVND(col.lines.find((x) => x.code === c)!.value) })), h('td', { class: 'num', text: formatVND(r.unallocated.find((x) => x.code === c)!.value) }), h('td', { class: 'num', text: formatVND(t.value) }));
+        }),
+      ),
+    ),
+  );
 }
 
 /** Điểm "Hiểu bản chất" = Tầng 2 + Tầng 3 (SPEC 4.4). */

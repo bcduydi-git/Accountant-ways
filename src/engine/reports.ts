@@ -269,3 +269,12 @@ export function reportLinesForAccount(ctx: EngineContext, account: string): { re
 }
 
 export { notOpening };
+
+/** KQKD theo mảng: lọc dòng bút toán theo mã mảng (một sổ cái, nhiều mảng). */
+export function incomeStatementBySegment(ctx: EngineContext, entries: readonly PostedEntry[], segmentIds: string[]) {
+  const pick = (pred: (seg: string | undefined) => boolean) =>
+    entries.map((e) => ({ ...e, lines: e.lines.filter((l) => pred(l.segment)) }));
+  const cols = segmentIds.map((s) => ({ id: s, lines: incomeStatement(ctx, pick((x) => x === s)) }));
+  const unallocated = incomeStatement(ctx, pick((x) => !x));
+  return { cols, unallocated, total: incomeStatement(ctx, entries) };
+}
