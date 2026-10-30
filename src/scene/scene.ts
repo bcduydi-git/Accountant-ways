@@ -73,9 +73,9 @@ export class Scene {
       g.fillRect(271, 12, 2, 30);
       g.fillStyle = '#c9a66b';
       g.fillRect(120, 14, 80, 22);
-      g.fillStyle = '#3b3f58';
-      g.font = '8px monospace';
-      g.fillText('SỔ SÁCH', 140, 28);
+      // Bảng ghim sổ sách: các dòng kẻ như trang sổ cái
+      g.fillStyle = '#8a6a3a';
+      for (let i = 0; i < 4; i++) g.fillRect(126, 18 + i * 4, 68 - (i % 2) * 20, 2);
       for (let y = 64; y < H; y += 8)
         for (let x = 0; x < W; x += 8) {
           g.fillStyle = (x + y) % 16 === 0 ? '#6b5a4a' : '#5e4f41';
@@ -110,10 +110,6 @@ export class Scene {
         g.fillRect(cx - 2, baseY - 16, 4, 4);
         g.fillRect(cx - 1, baseY - 12, 2, 2);
       }
-      g.fillStyle = talking ? '#ffe066' : '#e8e8e8';
-      g.font = '7px monospace';
-      const label = c.name.split(' ').slice(-1)[0] ?? c.name;
-      g.fillText(label, cx - label.length * 2, 108);
     });
   }
 }

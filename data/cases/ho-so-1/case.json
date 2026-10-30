@@ -1,0 +1,191 @@
+{
+  "id": "ho-so-1",
+  "order": 1,
+  "title": "Hồ sơ 1 — Thương mại",
+  "type": "Thương mại",
+  "company": {
+    "name": "Công ty TNHH Thời Trang Sợi Mây",
+    "description": "Bán sỉ và lẻ quần áo may sẵn. Năm hoạt động thứ hai, doanh thu năm 2025 là 750 triệu đồng.",
+    "taxNote": "Hàng may mặc: nhóm 10% đang được giảm thuế GTGT."
+  },
+  "fiscalYear": 2026,
+  "regulationNote": "Quy định áp dụng tại 30/10/2026",
+  "characters": [
+    {
+      "id": "h1-chu-tu",
+      "name": "Chú Tư Sổ",
+      "role": "Kế toán trưởng (hướng dẫn)",
+      "color": "#7ec4cf",
+      "mentor": true
+    },
+    {
+      "id": "h1-ba-may",
+      "name": "Bà Lò Thị Mây",
+      "role": "Giám đốc",
+      "color": "#e58fb1"
+    },
+    {
+      "id": "h1-be-na",
+      "name": "Bé Na",
+      "role": "Bán hàng kiêm thủ kho",
+      "color": "#f6c85f"
+    }
+  ],
+  "partners": [
+    {
+      "id": "ao-xinh",
+      "name": "Shop Áo Xinh",
+      "kind": "customer"
+    },
+    {
+      "id": "co-ba",
+      "name": "Tạp hóa Cô Ba",
+      "kind": "customer"
+    },
+    {
+      "id": "chi-hong",
+      "name": "Xưởng May Chỉ Hồng",
+      "kind": "supplier"
+    },
+    {
+      "id": "lua-trang",
+      "name": "Công ty May Lụa Trăng",
+      "kind": "supplier"
+    },
+    {
+      "id": "hat-lua",
+      "name": "Ngân hàng TMCP Hạt Lúa",
+      "kind": "lender",
+      "term": "short"
+    },
+    {
+      "id": "be-na",
+      "name": "Bé Na (nhân viên)",
+      "kind": "employee"
+    }
+  ],
+  "items": [
+    {
+      "id": "ao-thun",
+      "name": "Áo thun cotton",
+      "unit": "cái"
+    },
+    {
+      "id": "quan-kaki",
+      "name": "Quần kaki",
+      "unit": "cái"
+    },
+    {
+      "id": "ao-khoac",
+      "name": "Áo khoác gió",
+      "unit": "cái"
+    }
+  ],
+  "segments": [],
+  "detailAccounts": {
+    "131": [
+      "partner"
+    ],
+    "141": [
+      "partner"
+    ],
+    "156": [
+      "item"
+    ],
+    "331": [
+      "partner"
+    ],
+    "3411": [
+      "partner"
+    ]
+  },
+  "months": [
+    {
+      "id": "month-01",
+      "label": "Tháng 1",
+      "openAccounts": [
+        "111",
+        "112",
+        "131",
+        "1331",
+        "1388",
+        "156",
+        "331",
+        "33311",
+        "3334",
+        "334",
+        "3388",
+        "4111",
+        "4211",
+        "5111",
+        "5113",
+        "632",
+        "641",
+        "642",
+        "711"
+      ]
+    },
+    {
+      "id": "month-02",
+      "label": "Tháng 2",
+      "openAccounts": [
+        "111",
+        "112",
+        "131",
+        "1331",
+        "1388",
+        "156",
+        "331",
+        "33311",
+        "3334",
+        "334",
+        "3388",
+        "4111",
+        "4211",
+        "5111",
+        "5113",
+        "632",
+        "641",
+        "642",
+        "711"
+      ]
+    },
+    {
+      "id": "month-03",
+      "label": "Tháng 3",
+      "openAccounts": [
+        "111",
+        "112",
+        "131",
+        "1331",
+        "1388",
+        "156",
+        "331",
+        "33311",
+        "3334",
+        "334",
+        "3388",
+        "4111",
+        "4211",
+        "5111",
+        "5113",
+        "632",
+        "641",
+        "642",
+        "711"
+      ]
+    }
+  ],
+  "tiers": {
+    "tier2": false,
+    "tier3a": false,
+    "tier3b": false
+  },
+  "reportTemplate": "temp-simplified",
+  "intro": [
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Hồ sơ 1: công ty thương mại nhỏ. Mục tiêu: hiểu phương trình kế toán và ba báo cáo nối nhau."
+    }
+  ]
+}

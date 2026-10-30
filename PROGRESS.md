@@ -9,9 +9,9 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 - [x] Nhập tay 10 bút toán mẫu (màn debug) ra ba báo cáo cân
 
 ### M1 — Hồ sơ 1, T1–T3
-- [ ] Chơi trọn 3 tháng
-- [ ] Mọi đáp án kịch bản tự cân
-- [ ] Golden test cho rule đã bật
+- [x] Chơi trọn 3 tháng (kiểm bằng Playwright: nhập đúng, nhập sai, xem đáp án, khóa sổ 3 tháng)
+- [x] Mọi đáp án kịch bản tự cân
+- [x] Golden test cho rule đã bật (tests/golden/rules.test.ts, mọi rule đều có test)
 
 ### M2 — Hết Hồ sơ 1
 - [ ] Ít nhất 3 bất thường cài và chấm được (Tầng 2)
@@ -39,5 +39,8 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 - `src/game/case-runtime.ts`: dựng sổ đáp án, giải `$calc`, chấm sự kiện, sổ Tầng 2 và sổ công ty Tầng 3b. `save.ts`: localStorage, xuất/nhập.
 - `src/ui/*`: các màn; `src/scene/*`: canvas pixel và nạp asset.
 - Test: `tests/invariants` (5.6 + kịch bản), `tests/golden` (rule), `tests/lint` (chặn hằng số pháp lý trong src/).
+
+## Soạn kịch bản
+- Dữ liệu game là JSON trong `data/cases/<hồ-sơ>/`. JSON được sinh bằng `node scripts/build-ho-so-N.mjs` (công cụ soạn, đọc thuế suất từ data/rules, tự tính GTGT, khấu trừ, nộp thuế). Sửa script rồi chạy lại, sau đó `npm test`.
 
 ## Ghi chú cho phiên sau

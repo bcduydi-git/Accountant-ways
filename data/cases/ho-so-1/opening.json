@@ -1,0 +1,99 @@
+{
+  "date": "2026-01-01",
+  "balances": [
+    {
+      "account": "111",
+      "debit": 80000000
+    },
+    {
+      "account": "112",
+      "debit": 420000000
+    },
+    {
+      "account": "131",
+      "debit": 40000000,
+      "partner": "ao-xinh"
+    },
+    {
+      "account": "131",
+      "debit": 20000000,
+      "partner": "co-ba"
+    },
+    {
+      "account": "156",
+      "debit": 120000000,
+      "item": "ao-thun"
+    },
+    {
+      "account": "156",
+      "debit": 120000000,
+      "item": "quan-kaki"
+    },
+    {
+      "account": "331",
+      "credit": 90000000,
+      "partner": "chi-hong"
+    },
+    {
+      "account": "33311",
+      "credit": 8000000
+    },
+    {
+      "account": "3334",
+      "credit": 4000000
+    },
+    {
+      "account": "4111",
+      "credit": 600000000
+    },
+    {
+      "account": "4211",
+      "credit": 98000000
+    }
+  ],
+  "priorYearRevenue": 750000000,
+  "charterCapital": {
+    "registered": 600000000,
+    "contributed": 600000000
+  },
+  "priorYearIncomeStatement": {
+    "11": 470000000,
+    "21": 1000000,
+    "22": 0,
+    "25": 120000000,
+    "26": 110000000,
+    "31": 0,
+    "32": 0,
+    "51": 7650000,
+    "01": 750000000,
+    "02": 0
+  },
+  "inventory": [
+    {
+      "account": "156",
+      "item": "ao-thun",
+      "qty": 2000,
+      "unitCost": 60000
+    },
+    {
+      "account": "156",
+      "item": "quan-kaki",
+      "qty": 800,
+      "unitCost": 150000
+    }
+  ],
+  "fixedAssets": [
+    {
+      "id": "noi-that-vp",
+      "name": "Bộ nội thất văn phòng (bàn họp, tủ hồ sơ gỗ)",
+      "account": "211",
+      "cost": 72000000,
+      "accumulated": 0,
+      "monthlyDepreciation": 2000000,
+      "usefulLifeMonths": 36,
+      "type": "general",
+      "businessUse": true,
+      "acquiredInYear": true
+    }
+  ]
+}

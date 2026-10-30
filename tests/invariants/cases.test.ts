@@ -95,24 +95,25 @@ for (const id of ids) {
       for (const b of bundle.opening.balances) for (const f of rt.spec(b.account)) expect(b[f], `đầu kỳ ${b.account} thiếu ${f}`).toBeTruthy();
     });
 
+    const hasClosing = rt.events.some((r) => r.event.kind === 'closing');
+    const hasCit = rt.events.some((r) => r.event.kind === 'cit');
+
     it('đáp án tự cân: chạy toàn bộ đáp án qua engine, bất biến đúng sau từng sự kiện', () => {
-      let closingSeen = false;
-      const l = rt.canonicalLedger(undefined, (ledger, ref) => {
-        expectInvariants(ledger, ref.event.id);
-        if (ref.event.kind === 'closing') closingSeen = true;
-      });
-      expect(closingSeen, 'có sự kiện kết chuyển cuối năm').toBe(true);
-      expect(profitAndLossResidual(rt.ctx, l.entries), 'TK loại 5–9 về 0 sau kết chuyển').toEqual([]);
+      const l = rt.canonicalLedger(undefined, (ledger, ref) => expectInvariants(ledger, ref.event.id));
       const r = computeReports(rt.ctx, l.entries);
+      expect(r.unallocatedProduction).toBe(0);
+      if (!hasClosing) return;
+      expect(profitAndLossResidual(rt.ctx, l.entries), 'TK loại 5–9 về 0 sau kết chuyển').toEqual([]);
       const d421 = [...accountBalances(l.entries, (e) => e.kind !== 'opening')].filter(([a]) => a.startsWith('421')).reduce((s, [, v]) => s - v, 0);
       expect(d421, 'LN trên KQKD = biến động 421').toBe(r.totals.profitAfterTax);
       expect(r.totals.profitBeforeTax).toBeGreaterThan(0);
-      expect(r.unallocatedProduction).toBe(0);
-      // Tồn kho không âm theo mặt hàng; tiền không âm
-      for (const [k, v] of detailBalances(l.entries)) {
-        const d = parseDetailKey(k);
-        if (hasPrefix(d.account, ['15', '111', '112'])) expect(v, `số dư ${k}`).toBeGreaterThanOrEqual(0);
-      }
+    });
+
+    it('sự kiện cuối năm: có thuế TNDN rồi mới kết chuyển (khi hồ sơ đã đủ 12 tháng)', () => {
+      if (!hasClosing) return;
+      expect(hasCit).toBe(true);
+      const last = rt.events[rt.events.length - 1]!.event;
+      expect(last.kind).toBe('closing');
     });
 
     it('tiền và tồn kho không âm tại mọi thời điểm', () => {
@@ -122,6 +123,18 @@ for (const id of ids) {
           if (hasPrefix(d.account, ['15', '111', '112'])) expect(v, `${ref.event.id}: ${k}`).toBeGreaterThanOrEqual(0);
         }
       });
+    });
+
+    it('chơi hết hồ sơ bằng đáp án: mọi đáp án chính và thay thế đều được chấm đúng', () => {
+      const l = rt.newLedger();
+      for (const { event } of rt.events) {
+        const answers = rt.resolveAnswers(event, l);
+        for (const a of answers) {
+          const res = rt.score(event, l, a);
+          expect(res.correct, `${event.id}: ${res.explanationLines.join('; ')} ${res.violations.map((v) => v.ruleId).join(',')}`).toBe(true);
+        }
+        for (const e of entryInputs(event, answers[0]!, 'player')) l.post(e);
+      }
     });
 
     it('đáp án thay thế có cùng vector với đáp án chính', () => {
@@ -152,6 +165,7 @@ for (const id of ids) {
     });
 
     it('đối chiếu LN kế toán → TNCT khớp chi phí thuế TNDN đã ghi', () => {
+      if (!hasCit) return;
       const l = rt.canonicalLedger();
       const rec = rt.reconciliation(l);
       const r = computeReports(rt.ctx, l.entries);

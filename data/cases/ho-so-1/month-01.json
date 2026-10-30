@@ -1,0 +1,472 @@
+{
+  "id": "month-01",
+  "label": "Tháng 1",
+  "intro": [
+    {
+      "speaker": "h1-ba-may",
+      "text": "Chào em! Chị là Mây, giám đốc Sợi Mây. Kế toán cũ nghỉ, để lại sổ sách cho em đó."
+    },
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Chú là Tư, kế toán trưởng làm bán thời gian. Mỗi nghiệp vụ em chọn tài khoản, ghi Nợ/Có, chú xem báo cáo thay đổi ra sao."
+    },
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Nhớ là ghi theo kiểu nào cũng được, miễn số dư cuối cùng đúng. Công ty kê khai GTGT theo tháng."
+    }
+  ],
+  "outro": [],
+  "events": [
+    {
+      "id": "h1-m01-mua-ao-thun",
+      "date": "2026-01-05",
+      "title": "Mua 1.000 áo thun, chưa trả tiền",
+      "speaker": "h1-be-na",
+      "narrative": "Bé Na nhập kho 1.000 áo thun cotton của Xưởng May Chỉ Hồng, đơn giá 60.000. Hai bên thỏa thuận trả chậm 30 ngày.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Xưởng May Chỉ Hồng → Công ty TNHH Thời Trang Sợi Mây",
+          "rows": [
+            [
+              "Áo thun cotton — 1.000 cái × 60.000",
+              "60.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "60.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "4.800.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "64.800.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hàng về kho làm tăng hàng hóa; thuế GTGT đầu vào được khấu trừ; chưa trả tiền thì phát sinh nợ phải trả.",
+      "explanation": "Nợ 156 (áo thun) 60.000.000, Nợ 1331 4.800.000 / Có 331 (Chỉ Hồng) 64.800.000. Thuế suất 8% vì hàng may mặc thuộc nhóm 10% đang được giảm. Hóa đơn trên 5.000.000 nên khi trả phải chuyển khoản mới giữ được quyền khấu trừ.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 64800000,
+          "paymentMethod": "credit"
+        },
+        "vat": {
+          "base": 60000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "156",
+                "debit": 60000000,
+                "item": "ao-thun"
+              },
+              {
+                "account": "1331",
+                "debit": 4800000
+              },
+              {
+                "account": "331",
+                "credit": 64800000,
+                "partner": "chi-hong"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m01-nop-gtgt-t12",
+      "date": "2026-01-10",
+      "title": "Nộp thuế GTGT tháng 12/2025",
+      "speaker": "h1-chu-tu",
+      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 12/2025 là 8.000.000 bằng chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Giấy nộp tiền vào ngân sách",
+          "rows": [
+            [
+              "Nội dung",
+              "Thuế GTGT tháng 12/2025"
+            ],
+            [
+              "Số tiền",
+              "8.000.000"
+            ],
+            [
+              "Hình thức",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nộp thuế làm giảm nghĩa vụ với Nhà nước và giảm tiền gửi.",
+      "explanation": "Nợ 33311 / Có 112 8.000.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 8000000
+              },
+              {
+                "account": "112",
+                "credit": 8000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m01-ban-ao-xinh",
+      "date": "2026-01-15",
+      "title": "Bán 600 áo thun thu chuyển khoản",
+      "speaker": "h1-be-na",
+      "narrative": "Một khách sỉ mới mua 600 áo thun, giá 100.000/cái, chuyển khoản ngay. Bé Na đã xuất kho.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Thời Trang Sợi Mây → Khách lẻ",
+          "rows": [
+            [
+              "Áo thun cotton — 600 cái × 100.000",
+              "60.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "60.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "4.800.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "64.800.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Chuyển khoản"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Áo thun cotton — 600 cái × giá vốn 60.000",
+              "36.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hai bút toán: ghi nhận doanh thu cùng thuế GTGT đầu ra, rồi ghi giá vốn cho hàng xuất kho.",
+      "explanation": "Doanh thu 60.000.000 và thuế đầu ra 4.800.000 ghi Có, tiền gửi tăng 64.800.000. Giá vốn 600 × 60.000 = 36.000.000: Nợ 632 / Có 156. Doanh thu và giá vốn vào KQKD; tồn kho trên CĐKT giảm.",
+      "attrs": {
+        "vat": {
+          "base": 60000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu và thuế GTGT đầu ra",
+            "lines": [
+              {
+                "account": "112",
+                "debit": 64800000
+              },
+              {
+                "account": "5111",
+                "credit": 60000000
+              },
+              {
+                "account": "33311",
+                "credit": 4800000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn hàng bán",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 36000000
+              },
+              {
+                "account": "156",
+                "credit": 36000000,
+                "item": "ao-thun"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m01-ban-chiu-co-ba",
+      "date": "2026-01-20",
+      "title": "Bán chịu 300 quần kaki cho Tạp hóa Cô Ba",
+      "speaker": "h1-be-na",
+      "narrative": "Tạp hóa Cô Ba lấy 300 quần kaki, giá 240.000/cái, hẹn 45 ngày trả.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Thời Trang Sợi Mây → Tạp hóa Cô Ba",
+          "rows": [
+            [
+              "Quần kaki — 300 cái × 240.000",
+              "72.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "72.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "5.760.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "77.760.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Quần kaki — 300 cái × giá vốn 150.000",
+              "45.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hai bút toán: ghi nhận doanh thu cùng thuế GTGT đầu ra, rồi ghi giá vốn cho hàng xuất kho.",
+      "explanation": "Nợ 131 (Cô Ba) 77.760.000 / Có 5111 72.000.000, Có 33311 5.760.000. Giá vốn 300 × 150.000 = 45.000.000. Bán chịu vẫn ghi doanh thu ngay khi giao hàng; tiền chưa về nên LCTT chưa có gì.",
+      "attrs": {
+        "vat": {
+          "base": 72000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu và thuế GTGT đầu ra",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 77760000,
+                "partner": "co-ba"
+              },
+              {
+                "account": "5111",
+                "credit": 72000000
+              },
+              {
+                "account": "33311",
+                "credit": 5760000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn hàng bán",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 45000000
+              },
+              {
+                "account": "156",
+                "credit": 45000000,
+                "item": "quan-kaki"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m01-ao-xinh-tra-no",
+      "date": "2026-01-25",
+      "title": "Shop Áo Xinh trả nợ cũ",
+      "speaker": "h1-be-na",
+      "narrative": "Shop Áo Xinh chuyển khoản trả hết khoản nợ 40.000.000 còn từ năm trước.",
+      "documents": [
+        {
+          "kind": "Giấy báo Có ngân hàng",
+          "rows": [
+            [
+              "Người chuyển",
+              "Shop Áo Xinh"
+            ],
+            [
+              "Nội dung",
+              "Thanh toán công nợ 2025"
+            ],
+            [
+              "Số tiền",
+              "40.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Thu nợ: tiền tăng, phải thu giảm. Doanh thu không đổi.",
+      "explanation": "Nợ 112 / Có 131 (Áo Xinh) 40.000.000. Doanh thu đã ghi từ năm trước nên KQKD không đổi; LCTT có thêm \"tiền thu từ bán hàng\". Đây là chỗ đầu tiên thấy lãi và tiền lệch nhau theo thời điểm.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "112",
+                "debit": 40000000
+              },
+              {
+                "account": "131",
+                "credit": 40000000,
+                "partner": "ao-xinh"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m01-luong",
+      "date": "2026-01-31",
+      "title": "Tính và trả lương tháng 1",
+      "speaker": "h1-chu-tu",
+      "narrative": "Bảng lương tháng 1: bộ phận bán hàng 6.000.000, bộ phận quản lý 8.000.000. Trả ngay bằng chuyển khoản. (Kịch bản giản lược: chưa xét bảo hiểm bắt buộc và thuế TNCN.)",
+      "documents": [
+        {
+          "kind": "Bảng thanh toán tiền lương",
+          "rows": [
+            [
+              "Bộ phận bán hàng",
+              "6.000.000"
+            ],
+            [
+              "Bộ phận quản lý",
+              "8.000.000"
+            ],
+            [
+              "Cộng",
+              "14.000.000"
+            ],
+            [
+              "Hình thức trả",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi chi phí theo bộ phận (641, 642) đối ứng phải trả người lao động, rồi trả lương.",
+      "explanation": "Lương bán hàng vào 641, lương quản lý vào 642, ghi Có 334. Khi trả: Nợ 334 / Có 112. Ghi thẳng Có 112 không qua 334 cũng được chấm đúng vì số dư cuối cùng như nhau; ghi qua 334 thì sổ ghi rõ hơn thời điểm phát sinh nghĩa vụ.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Tính lương",
+            "lines": [
+              {
+                "account": "641",
+                "debit": 6000000
+              },
+              {
+                "account": "642",
+                "debit": 8000000
+              },
+              {
+                "account": "334",
+                "credit": 14000000
+              }
+            ]
+          },
+          {
+            "memo": "Trả lương",
+            "lines": [
+              {
+                "account": "334",
+                "debit": 14000000
+              },
+              {
+                "account": "112",
+                "credit": 14000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m01-khau-tru",
+      "date": "2026-01-31",
+      "title": "Khấu trừ thuế GTGT tháng 1",
+      "speaker": "h1-chu-tu",
+      "narrative": "Cuối tháng 1, chú Tư lập tờ khai GTGT. Thuế đầu vào được khấu trừ còn 4.800.000, thuế đầu ra phải nộp 10.560.000. Hãy bù trừ phần đầu vào được khấu trừ với đầu ra.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ (số dư 1331)",
+              "4.800.000"
+            ],
+            [
+              "Thuế GTGT đầu ra (số dư 33311)",
+              "10.560.000"
+            ],
+            [
+              "Số được khấu trừ trong kỳ",
+              "4.800.000"
+            ],
+            [
+              "Còn phải nộp",
+              "5.760.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi Nợ thuế GTGT đầu ra, Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Khấu trừ là bù trừ hai số dư: Nợ 33311 / Có 1331 4.800.000. Phần còn lại 5.760.000 là số thuế phải nộp, sẽ nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 4800000
+              },
+              {
+                "account": "1331",
+                "credit": 4800000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

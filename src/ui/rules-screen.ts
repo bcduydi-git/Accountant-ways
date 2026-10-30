@@ -12,7 +12,7 @@ export function ruleBadge(id: string) {
   const r = app.rules.get(id);
   const enabled = app.rules.isEnabled(id);
   const cls = r.status === 'unverified' ? 'badge badge-warn' : r.status === 'verified-secondary' ? 'badge badge-secondary' : 'badge';
-  return h('span', { class: cls, title: `${r.description}\nCăn cứ: ${r.basis}\nTrạng thái: ${STATUS_LABEL[r.status]}${enabled ? '' : ' — đang TẮT'}`, text: `${r.status === 'verified-secondary' ? 'ⓘ nguồn thứ cấp' : r.status === 'unverified' ? '⚠ chưa kiểm chứng' : '✔ văn bản gốc'}` });
+  return h('span', { class: cls, title: `${r.description}\nCăn cứ: ${r.basis}\nTrạng thái: ${STATUS_LABEL[r.status]}${enabled ? '' : ' — đang TẮT'}`, text: `${r.id} · ${r.status === 'verified-secondary' ? 'ⓘ nguồn thứ cấp' : r.status === 'unverified' ? `⚠ chưa kiểm chứng${enabled ? '' : ' (tắt)'}` : '✔ văn bản gốc'}` });
 }
 
 export function renderRules(root: HTMLElement) {
