@@ -149,3 +149,4 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.6); }
 #toast.show { opacity: 0.92; }
 .note-table { margin: 10px 0; }
 .note-table h4 { margin: 4px 0; }
+.checks-inline label { display: inline-flex; gap: 4px; align-items: center; }

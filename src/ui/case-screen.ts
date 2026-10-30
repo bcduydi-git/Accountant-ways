@@ -315,6 +315,7 @@ export function renderCase(root: HTMLElement, caseId: string) {
           'div',
           { class: 'score-box' },
           h('span', {}, 'Sổ sạch: ', h('b', { text: `${score.got}/${score.max}` })),
+          understanding(rt, caseId),
           h('span', { class: 'muted', text: REGULATION_NOTE }),
           rt.meta.tiers.tier2 ? h('a', { attrs: { href: `#/case/${caseId}/tier2` }, text: yearDone() ? 'Tầng 2 — Bắt lỗi ▶' : '' }) : null,
           rt.meta.tiers.tier3a ? h('a', { attrs: { href: `#/case/${caseId}/tier3` }, text: yearDone() ? 'Tầng 3 — Đối chiếu thuế ▶' : '' }) : null,
@@ -402,6 +403,20 @@ export function renderCase(root: HTMLElement, caseId: string) {
   const pendingAttempts: Record<string, number> = {};
   let lastResult: { eventId: string; ok: boolean; before: Reports } | null = null;
   draw();
+}
+
+/** Điểm "Hiểu bản chất" = Tầng 2 + Tầng 3 (SPEC 4.4). */
+function understanding(rt: CaseRuntime, caseId: string) {
+  const prog = caseProgress(caseId);
+  if (!rt.meta.tiers.tier2 && !rt.meta.tiers.tier3a) return null;
+  const t2 = prog.tier2?.findings.reduce((s, f) => s + f.points, 0) ?? 0;
+  const t2max = (rt.bundle.anomalies?.anomalies.length ?? 0) * 3;
+  const t3a = prog.tier3?.recon?.points ?? 0;
+  const t3amax = prog.tier3?.recon?.maxPoints ?? 0;
+  const items = rt.bundle.adjustments?.items ?? [];
+  const t3b = items.reduce((s, i) => s + ({ first: 4, retry: 2, revealed: 0 } as const)[prog.tier3?.adjustments[i.id]?.status ?? 'revealed'] * (prog.tier3?.adjustments[i.id] ? 1 : 0), 0);
+  const t3bmax = rt.meta.tiers.tier3b ? items.length * 4 : 0;
+  return h('span', {}, 'Hiểu bản chất: ', h('b', { text: `${t2 + t3a + t3b}/${t2max + (t3amax || 0) + t3bmax}` }), h('span', { class: 'muted small', text: t3amax ? '' : ' (chưa chấm Tầng 3a)' }));
 }
 
 export function entriesTable(rt: CaseRuntime, entries: { memo?: string; lines: LineInput[] }[]) {

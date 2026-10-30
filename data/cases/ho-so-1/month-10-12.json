@@ -1,0 +1,584 @@
+{
+  "id": "month-10-12",
+  "label": "Tháng 10–12",
+  "intro": [
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Ba tháng cuối được gộp cho nhanh. Tháng 10 không phát sinh thuế GTGT phải nộp vì đầu vào tháng 9 còn dư."
+    },
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Cuối năm em tự tính thuế TNDN và tự kết chuyển nhé. Máy không làm hộ đâu!"
+    }
+  ],
+  "outro": [
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Khóa sổ năm xong! Giờ thử làm Tầng 2 (bắt lỗi BCTC) và Tầng 3 rút gọn (đối chiếu thuế)."
+    }
+  ],
+  "events": [
+    {
+      "id": "h1-q4-ao-xinh-tra",
+      "date": "2026-10-05",
+      "title": "Shop Áo Xinh trả lô tháng 4 và tháng 5",
+      "speaker": "h1-be-na",
+      "narrative": "Áo Xinh chuyển khoản 118.800.000 cho hai lô tháng 4 (54.000.000) và tháng 5 (64.800.000).",
+      "documents": [
+        {
+          "kind": "Giấy báo Có ngân hàng",
+          "rows": [
+            [
+              "Người chuyển",
+              "Shop Áo Xinh"
+            ],
+            [
+              "Số tiền",
+              "118.800.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 112 / Có 131 (Áo Xinh) 118.800.000.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "112",
+                "debit": 118800000
+              },
+              {
+                "account": "131",
+                "credit": 118800000,
+                "partner": "ao-xinh"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-tra-ncc",
+      "date": "2026-10-10",
+      "title": "Trả nợ hai nhà cung cấp",
+      "speaker": "h1-ba-may",
+      "narrative": "Chuyển khoản trả Xưởng May Chỉ Hồng 64.800.000 (lô tháng 7) và Công ty May Lụa Trăng 54.000.000 (lô tháng 9).",
+      "documents": [
+        {
+          "kind": "Ủy nhiệm chi",
+          "rows": [
+            [
+              "Xưởng May Chỉ Hồng",
+              "64.800.000"
+            ],
+            [
+              "Công ty May Lụa Trăng",
+              "54.000.000"
+            ],
+            [
+              "Tổng",
+              "118.800.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Mỗi nhà cung cấp một dòng chi tiết.",
+      "explanation": "Nợ 331 (Chỉ Hồng) 64.800.000, Nợ 331 (Lụa Trăng) 54.000.000 / Có 112 118.800.000. Ghi gộp một dòng 331 không chi tiết sẽ bị chấm sai: sổ chi tiết công nợ phải đúng từng đối tượng.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "331",
+                "debit": 64800000,
+                "partner": "chi-hong"
+              },
+              {
+                "account": "331",
+                "debit": 54000000,
+                "partner": "lua-trang"
+              },
+              {
+                "account": "112",
+                "credit": 118800000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-ban-ao-xinh",
+      "date": "2026-11-15",
+      "title": "Bán chịu 600 áo thun cho Shop Áo Xinh",
+      "speaker": "h1-be-na",
+      "narrative": "Mùa mua sắm cuối năm, Áo Xinh lấy 600 áo thun, công nợ 90 ngày.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Thời Trang Sợi Mây → Shop Áo Xinh",
+          "rows": [
+            [
+              "Áo thun cotton — 600 cái × 100.000",
+              "60.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "60.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "4.800.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "64.800.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Áo thun cotton — 600 cái × giá vốn 60.000",
+              "36.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hai bút toán: ghi nhận doanh thu cùng thuế GTGT đầu ra, rồi ghi giá vốn cho hàng xuất kho.",
+      "explanation": "Nợ 131 (Áo Xinh) 64.800.000 / Có 5111 60.000.000, Có 33311 4.800.000; giá vốn 36.000.000.",
+      "attrs": {
+        "vat": {
+          "base": 60000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu và thuế GTGT đầu ra",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 64800000,
+                "partner": "ao-xinh"
+              },
+              {
+                "account": "5111",
+                "credit": 60000000
+              },
+              {
+                "account": "33311",
+                "credit": 4800000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn hàng bán",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 36000000
+              },
+              {
+                "account": "156",
+                "credit": 36000000,
+                "item": "ao-thun"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-ban-le",
+      "date": "2026-11-20",
+      "title": "Bán 200 quần kaki thu chuyển khoản",
+      "speaker": "h1-be-na",
+      "narrative": "Bán hết 200 quần kaki còn lại cho khách lẻ qua kênh online, thu chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Thời Trang Sợi Mây → Khách lẻ",
+          "rows": [
+            [
+              "Quần kaki — 200 cái × 240.000",
+              "48.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "48.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "3.840.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "51.840.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Chuyển khoản"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Quần kaki — 200 cái × giá vốn 150.000",
+              "30.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hai bút toán: ghi nhận doanh thu cùng thuế GTGT đầu ra, rồi ghi giá vốn cho hàng xuất kho.",
+      "explanation": "Nợ 112 51.840.000 / Có 5111 48.000.000, Có 33311 3.840.000; giá vốn 30.000.000. Quần kaki hết hàng.",
+      "attrs": {
+        "vat": {
+          "base": 48000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu và thuế GTGT đầu ra",
+            "lines": [
+              {
+                "account": "112",
+                "debit": 51840000
+              },
+              {
+                "account": "5111",
+                "credit": 48000000
+              },
+              {
+                "account": "33311",
+                "credit": 3840000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn hàng bán",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 30000000
+              },
+              {
+                "account": "156",
+                "credit": 30000000,
+                "item": "quan-kaki"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-khau-tru-t11",
+      "date": "2026-11-30",
+      "title": "Khấu trừ thuế GTGT tháng 11",
+      "speaker": "h1-chu-tu",
+      "narrative": "Cuối tháng 11, chú Tư lập tờ khai GTGT. Thuế đầu vào được khấu trừ còn 3.360.000, thuế đầu ra phải nộp 8.640.000. Hãy bù trừ phần đầu vào được khấu trừ với đầu ra.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ (số dư 1331)",
+              "3.360.000"
+            ],
+            [
+              "Thuế GTGT đầu ra (số dư 33311)",
+              "8.640.000"
+            ],
+            [
+              "Số được khấu trừ trong kỳ",
+              "3.360.000"
+            ],
+            [
+              "Còn phải nộp",
+              "5.280.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi Nợ thuế GTGT đầu ra, Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Khấu trừ là bù trừ hai số dư: Nợ 33311 / Có 1331 3.360.000. Phần còn lại 5.280.000 là số thuế phải nộp, sẽ nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 3360000
+              },
+              {
+                "account": "1331",
+                "credit": 3360000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-nop-gtgt-t11",
+      "date": "2026-12-20",
+      "title": "Nộp thuế GTGT tháng 11",
+      "speaker": "h1-chu-tu",
+      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 11 là 5.280.000 bằng chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Giấy nộp tiền vào ngân sách",
+          "rows": [
+            [
+              "Nội dung",
+              "Thuế GTGT tháng 11"
+            ],
+            [
+              "Số tiền",
+              "5.280.000"
+            ],
+            [
+              "Hình thức",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nộp thuế làm giảm nghĩa vụ với Nhà nước và giảm tiền gửi.",
+      "explanation": "Nợ 33311 / Có 112 5.280.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 5280000
+              },
+              {
+                "account": "112",
+                "credit": 5280000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-khau-hao",
+      "date": "2026-12-31",
+      "title": "Trích khấu hao tháng 10–12",
+      "speaker": "h1-chu-tu",
+      "narrative": "Trích khấu hao bộ nội thất văn phòng cho 3 tháng 10, 11, 12 (gộp một bút toán).",
+      "documents": [
+        {
+          "kind": "Bảng tính khấu hao",
+          "rows": [
+            [
+              "Khấu hao tháng",
+              "2.000.000"
+            ],
+            [
+              "Số tháng",
+              "3"
+            ],
+            [
+              "Cộng",
+              "6.000.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 642 / Có 2141 6.000.000. Hao mòn lũy kế cả năm 8.000.000.",
+      "attrs": {
+        "depreciation": [
+          {
+            "assetId": "noi-that-vp",
+            "amount": 6000000
+          }
+        ]
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "642",
+                "debit": 6000000
+              },
+              {
+                "account": "2141",
+                "credit": 6000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-lai-vay",
+      "date": "2026-12-31",
+      "title": "Trả lãi vay tháng 10–12",
+      "speaker": "h1-chu-tu",
+      "narrative": "Lãi vay 3 tháng 10–12, mỗi tháng 1.500.000, ngân hàng đã trừ tài khoản.",
+      "documents": [
+        {
+          "kind": "Giấy báo Nợ ngân hàng",
+          "rows": [
+            [
+              "Lãi 3 tháng",
+              "4.500.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 635 / Có 112 4.500.000.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "635",
+                "debit": 4500000
+              },
+              {
+                "account": "112",
+                "credit": 4500000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-luong",
+      "date": "2026-12-31",
+      "title": "Tính và trả lương tháng 10–12",
+      "speaker": "h1-chu-tu",
+      "narrative": "Bảng lương tháng 10–12: bộ phận bán hàng 18.000.000, bộ phận quản lý 24.000.000. Trả ngay bằng chuyển khoản. (Kịch bản giản lược: chưa xét bảo hiểm bắt buộc và thuế TNCN.)",
+      "documents": [
+        {
+          "kind": "Bảng thanh toán tiền lương",
+          "rows": [
+            [
+              "Bộ phận bán hàng",
+              "18.000.000"
+            ],
+            [
+              "Bộ phận quản lý",
+              "24.000.000"
+            ],
+            [
+              "Cộng",
+              "42.000.000"
+            ],
+            [
+              "Hình thức trả",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi chi phí theo bộ phận (641, 642) đối ứng phải trả người lao động, rồi trả lương.",
+      "explanation": "Lương bán hàng vào 641, lương quản lý vào 642, ghi Có 334. Khi trả: Nợ 334 / Có 112. Ghi thẳng Có 112 không qua 334 cũng được chấm đúng vì số dư cuối cùng như nhau; ghi qua 334 thì sổ ghi rõ hơn thời điểm phát sinh nghĩa vụ.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Tính lương",
+            "lines": [
+              {
+                "account": "641",
+                "debit": 18000000
+              },
+              {
+                "account": "642",
+                "debit": 24000000
+              },
+              {
+                "account": "334",
+                "credit": 42000000
+              }
+            ]
+          },
+          {
+            "memo": "Trả lương",
+            "lines": [
+              {
+                "account": "334",
+                "debit": 42000000
+              },
+              {
+                "account": "112",
+                "credit": 42000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-thue-tndn",
+      "date": "2026-12-31",
+      "title": "Tính và ghi chi phí thuế TNDN năm 2026",
+      "kind": "cit",
+      "speaker": "h1-chu-tu",
+      "narrative": "Cuối năm, tự tính thuế TNDN: lấy tổng lợi nhuận kế toán trước thuế, cộng các khoản chi không được trừ đã gặp trong năm (nhớ lại tháng 5 và tháng 6), nhân thuế suất chọn theo doanh thu năm trước. Ghi chi phí thuế TNDN hiện hành đối ứng thuế phải nộp.",
+      "documents": [],
+      "hint": "Thu nhập chịu thuế = LN kế toán trước thuế + chi không được trừ (quảng cáo trả tiền mặt từ 5 triệu, tiền phạt). Doanh thu năm trước 750 triệu thuộc khung thuế suất nào? Xem trang \"Quy định & rule\".",
+      "explanation": "Nợ 8211 / Có 3334 số thuế tính được. Bảng đối chiếu chi tiết từng dòng làm ở Tầng 3. Game chỉ ghi thuế hiện hành, không ghi thuế hoãn lại (giản lược so với VAS 17).",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "8211",
+                "debit": {
+                  "$calc": "citExpense"
+                }
+              },
+              {
+                "account": "3334",
+                "credit": {
+                  "$calc": "citExpense"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-q4-ket-chuyen",
+      "date": "2026-12-31",
+      "title": "Kết chuyển cuối năm",
+      "kind": "closing",
+      "speaker": "h1-chu-tu",
+      "narrative": "Tự làm bút toán kết chuyển: đưa doanh thu và mọi chi phí (kể cả chi phí thuế TNDN) sang TK 911, rồi kết chuyển lãi sang TK 4212. Bảng số dư bên dưới lấy từ sổ của bạn.",
+      "documents": [],
+      "hint": "Ba bước: Nợ 5111 / Có 911; Nợ 911 / Có 632, 635, 641, 642, 811, 8211; số dư Có còn lại của 911 chuyển sang Có 4212.",
+      "explanation": "Sau kết chuyển, mọi TK loại 5–9 về 0. Lợi nhuận sau thuế trên KQKD đúng bằng phần tăng của TK 4212. Engine không tự kết chuyển: đây là bước người làm kế toán phải tự hiểu.",
+      "attrs": {},
+      "answer": {
+        "$calc": "closing"
+      }
+    }
+  ]
+}

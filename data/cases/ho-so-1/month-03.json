@@ -179,7 +179,7 @@
       "date": "2026-03-20",
       "title": "Nộp thuế GTGT tháng 2",
       "speaker": "h1-chu-tu",
-      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 2 là 3.840.000 bằng chuyển khoản.",
+      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 2 là 1.440.000 bằng chuyển khoản.",
       "documents": [
         {
           "kind": "Giấy nộp tiền vào ngân sách",
@@ -190,7 +190,7 @@
             ],
             [
               "Số tiền",
-              "3.840.000"
+              "1.440.000"
             ],
             [
               "Hình thức",
@@ -200,7 +200,7 @@
         }
       ],
       "hint": "Nộp thuế làm giảm nghĩa vụ với Nhà nước và giảm tiền gửi.",
-      "explanation": "Nợ 33311 / Có 112 3.840.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
+      "explanation": "Nợ 33311 / Có 112 1.440.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
       "attrs": {},
       "answer": {
         "entries": [
@@ -208,11 +208,11 @@
             "lines": [
               {
                 "account": "33311",
-                "debit": 3840000
+                "debit": 1440000
               },
               {
                 "account": "112",
-                "credit": 3840000
+                "credit": 1440000
               }
             ]
           }

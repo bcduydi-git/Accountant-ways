@@ -1,0 +1,438 @@
+{
+  "id": "month-04",
+  "label": "Tháng 4",
+  "intro": [
+    {
+      "speaker": "h1-chu-tu",
+      "text": "Từ tháng này có thêm tạm ứng (141) và chi phí khác (811). Nhớ: số dư 331 của từng nhà cung cấp có thể dư Nợ."
+    }
+  ],
+  "outro": [],
+  "events": [
+    {
+      "id": "h1-m04-tra-truoc",
+      "date": "2026-04-02",
+      "title": "Trả trước cho nhà cung cấp mới",
+      "speaker": "h1-ba-may",
+      "narrative": "Bà Mây đặt Công ty May Lụa Trăng may 200 áo khoác gió, chuyển khoản đặt cọc trước 30.000.000. Hàng giao tháng sau.",
+      "documents": [
+        {
+          "kind": "Ủy nhiệm chi",
+          "rows": [
+            [
+              "Người nhận",
+              "Công ty May Lụa Trăng"
+            ],
+            [
+              "Nội dung",
+              "Trả trước tiền hàng áo khoác"
+            ],
+            [
+              "Số tiền",
+              "30.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Chưa nhận hàng nên chưa có hàng tồn kho; tiền trả trước vẫn theo dõi trên TK công nợ với nhà cung cấp.",
+      "explanation": "Nợ 331 (Lụa Trăng) / Có 112 30.000.000. TK 331 của Lụa Trăng dư Nợ nên trên CĐKT nằm ở dòng \"Trả trước cho người bán\" (tài sản), không bù trừ với nợ phải trả nhà cung cấp khác.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "331",
+                "debit": 30000000,
+                "partner": "lua-trang"
+              },
+              {
+                "account": "112",
+                "credit": 30000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m04-tam-ung",
+      "date": "2026-04-08",
+      "title": "Tạm ứng cho Bé Na đi chợ đầu mối",
+      "speaker": "h1-be-na",
+      "narrative": "Bé Na nhận 5.000.000 tiền mặt tạm ứng để đi chợ đầu mối khảo sát mẫu và thuê xe chở hàng mẫu.",
+      "documents": [
+        {
+          "kind": "Phiếu chi",
+          "rows": [
+            [
+              "Người nhận",
+              "Bé Na"
+            ],
+            [
+              "Lý do",
+              "Tạm ứng công tác"
+            ],
+            [
+              "Số tiền",
+              "5.000.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 141 (Bé Na) / Có 111 5.000.000. Tạm ứng chưa phải chi phí: chỉ khi Bé Na nộp chứng từ quyết toán mới ghi chi phí.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "141",
+                "debit": 5000000,
+                "partner": "be-na"
+              },
+              {
+                "account": "111",
+                "credit": 5000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m04-ban-ao-xinh",
+      "date": "2026-04-15",
+      "title": "Bán chịu 500 áo thun cho Shop Áo Xinh",
+      "speaker": "h1-be-na",
+      "narrative": "Shop Áo Xinh lấy thêm 500 áo thun, công nợ 60 ngày. Khoản tháng 2 vẫn chưa trả.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Thời Trang Sợi Mây → Shop Áo Xinh",
+          "rows": [
+            [
+              "Áo thun cotton — 500 cái × 100.000",
+              "50.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "50.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "4.000.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "54.000.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Áo thun cotton — 500 cái × giá vốn 60.000",
+              "30.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hai bút toán: ghi nhận doanh thu cùng thuế GTGT đầu ra, rồi ghi giá vốn cho hàng xuất kho.",
+      "explanation": "Nợ 131 (Áo Xinh) 54.000.000 / Có 5111 50.000.000, Có 33311 4.000.000; giá vốn 30.000.000. Phải thu Áo Xinh lên 140.400.000. Bán nhiều mà tiền chưa về.",
+      "attrs": {
+        "vat": {
+          "base": 50000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu và thuế GTGT đầu ra",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 54000000,
+                "partner": "ao-xinh"
+              },
+              {
+                "account": "5111",
+                "credit": 50000000
+              },
+              {
+                "account": "33311",
+                "credit": 4000000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn hàng bán",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 30000000
+              },
+              {
+                "account": "156",
+                "credit": 30000000,
+                "item": "ao-thun"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m04-quyet-toan-tam-ung",
+      "date": "2026-04-18",
+      "title": "Bé Na quyết toán tạm ứng",
+      "speaker": "h1-be-na",
+      "narrative": "Bé Na nộp hóa đơn GTGT thuê xe chở hàng mẫu: tiền dịch vụ 2.500.000, thuế 200.000. Số tạm ứng còn thừa 2.300.000 nộp lại quỹ.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Hợp tác xã Vận Tải Bánh Lăn",
+          "rows": [
+            [
+              "Dịch vụ vận chuyển hàng mẫu",
+              "2.500.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "200.000"
+            ],
+            [
+              "Tổng cộng",
+              "2.700.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Tiền mặt (từ tiền tạm ứng)"
+            ]
+          ]
+        },
+        {
+          "kind": "Giấy thanh toán tạm ứng",
+          "rows": [
+            [
+              "Số tạm ứng",
+              "5.000.000"
+            ],
+            [
+              "Đã chi",
+              "2.700.000"
+            ],
+            [
+              "Nộp lại quỹ",
+              "2.300.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Tạm ứng được tất toán bằng chi phí có chứng từ và số tiền nộp lại.",
+      "explanation": "Nợ 641 2.500.000, Nợ 1331 200.000, Nợ 111 2.300.000 / Có 141 (Bé Na) 5.000.000. Hóa đơn dưới 5.000.000 nên trả tiền mặt vẫn được khấu trừ.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 2700000,
+          "paymentMethod": "cash"
+        },
+        "vat": {
+          "base": 2500000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "641",
+                "debit": 2500000
+              },
+              {
+                "account": "1331",
+                "debit": 200000
+              },
+              {
+                "account": "111",
+                "debit": 2300000
+              },
+              {
+                "account": "141",
+                "credit": 5000000,
+                "partner": "be-na"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m04-nop-gtgt-t3",
+      "date": "2026-04-20",
+      "title": "Nộp thuế GTGT tháng 3",
+      "speaker": "h1-chu-tu",
+      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 3 là 3.840.000 bằng chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Giấy nộp tiền vào ngân sách",
+          "rows": [
+            [
+              "Nội dung",
+              "Thuế GTGT tháng 3"
+            ],
+            [
+              "Số tiền",
+              "3.840.000"
+            ],
+            [
+              "Hình thức",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nộp thuế làm giảm nghĩa vụ với Nhà nước và giảm tiền gửi.",
+      "explanation": "Nợ 33311 / Có 112 3.840.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 3840000
+              },
+              {
+                "account": "112",
+                "credit": 3840000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m04-luong",
+      "date": "2026-04-30",
+      "title": "Tính và trả lương tháng 4",
+      "speaker": "h1-chu-tu",
+      "narrative": "Bảng lương tháng 4: bộ phận bán hàng 6.000.000, bộ phận quản lý 8.000.000. Trả ngay bằng chuyển khoản. (Kịch bản giản lược: chưa xét bảo hiểm bắt buộc và thuế TNCN.)",
+      "documents": [
+        {
+          "kind": "Bảng thanh toán tiền lương",
+          "rows": [
+            [
+              "Bộ phận bán hàng",
+              "6.000.000"
+            ],
+            [
+              "Bộ phận quản lý",
+              "8.000.000"
+            ],
+            [
+              "Cộng",
+              "14.000.000"
+            ],
+            [
+              "Hình thức trả",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi chi phí theo bộ phận (641, 642) đối ứng phải trả người lao động, rồi trả lương.",
+      "explanation": "Lương bán hàng vào 641, lương quản lý vào 642, ghi Có 334. Khi trả: Nợ 334 / Có 112. Ghi thẳng Có 112 không qua 334 cũng được chấm đúng vì số dư cuối cùng như nhau; ghi qua 334 thì sổ ghi rõ hơn thời điểm phát sinh nghĩa vụ.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Tính lương",
+            "lines": [
+              {
+                "account": "641",
+                "debit": 6000000
+              },
+              {
+                "account": "642",
+                "debit": 8000000
+              },
+              {
+                "account": "334",
+                "credit": 14000000
+              }
+            ]
+          },
+          {
+            "memo": "Trả lương",
+            "lines": [
+              {
+                "account": "334",
+                "debit": 14000000
+              },
+              {
+                "account": "112",
+                "credit": 14000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m04-khau-tru",
+      "date": "2026-04-30",
+      "title": "Khấu trừ thuế GTGT tháng 4",
+      "speaker": "h1-chu-tu",
+      "narrative": "Cuối tháng 4, chú Tư lập tờ khai GTGT. Thuế đầu vào được khấu trừ còn 200.000, thuế đầu ra phải nộp 4.000.000. Hãy bù trừ phần đầu vào được khấu trừ với đầu ra.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ (số dư 1331)",
+              "200.000"
+            ],
+            [
+              "Thuế GTGT đầu ra (số dư 33311)",
+              "4.000.000"
+            ],
+            [
+              "Số được khấu trừ trong kỳ",
+              "200.000"
+            ],
+            [
+              "Còn phải nộp",
+              "3.800.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi Nợ thuế GTGT đầu ra, Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Khấu trừ là bù trừ hai số dư: Nợ 33311 / Có 1331 200.000. Phần còn lại 3.800.000 là số thuế phải nộp, sẽ nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 200000
+              },
+              {
+                "account": "1331",
+                "credit": 200000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

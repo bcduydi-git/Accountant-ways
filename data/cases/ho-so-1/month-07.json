@@ -1,0 +1,447 @@
+{
+  "id": "month-07",
+  "label": "Tháng 7",
+  "intro": [
+    {
+      "speaker": "h1-be-na",
+      "text": "Anh/chị ơi, kho bị dột!"
+    }
+  ],
+  "outro": [],
+  "events": [
+    {
+      "id": "h1-m07-hang-hong",
+      "date": "2026-07-03",
+      "title": "Kiểm kê: 20 áo khoác bị mốc",
+      "speaker": "h1-be-na",
+      "narrative": "Mưa dột kho, 20 áo khoác gió bị ẩm mốc, không bán được. Biên bản kiểm kê xác định giá gốc 5.000.000, không ai phải bồi thường; giám đốc duyệt xử lý vào giá vốn.",
+      "documents": [
+        {
+          "kind": "Biên bản kiểm kê",
+          "rows": [
+            [
+              "Mặt hàng",
+              "Áo khoác gió"
+            ],
+            [
+              "Số lượng hỏng",
+              "20 cái"
+            ],
+            [
+              "Giá gốc",
+              "5.000.000"
+            ],
+            [
+              "Xử lý",
+              "Tính vào giá vốn hàng bán"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hàng mất giá trị phải ra khỏi tồn kho.",
+      "explanation": "Nợ 632 / Có 156 (áo khoác) 5.000.000. Nếu không ghi, tồn kho trên CĐKT bị phóng đại và giá vốn bị ghi thiếu.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "632",
+                "debit": 5000000
+              },
+              {
+                "account": "156",
+                "credit": 5000000,
+                "item": "ao-khoac"
+              }
+            ]
+          }
+        ]
+      },
+      "unusual": true
+    },
+    {
+      "id": "h1-m07-mua-ao-thun",
+      "date": "2026-07-10",
+      "title": "Mua 1.000 áo thun trả chậm",
+      "speaker": "h1-be-na",
+      "narrative": "Nhập 1.000 áo thun của Xưởng May Chỉ Hồng, đơn giá 60.000, trả chậm.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Xưởng May Chỉ Hồng → Công ty TNHH Thời Trang Sợi Mây",
+          "rows": [
+            [
+              "Áo thun cotton — 1.000 cái × 60.000",
+              "60.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "60.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "4.800.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "64.800.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 156 (áo thun) 60.000.000, Nợ 1331 4.800.000 / Có 331 (Chỉ Hồng) 64.800.000.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 64800000,
+          "paymentMethod": "credit"
+        },
+        "vat": {
+          "base": 60000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "156",
+                "debit": 60000000,
+                "item": "ao-thun"
+              },
+              {
+                "account": "1331",
+                "debit": 4800000
+              },
+              {
+                "account": "331",
+                "credit": 64800000,
+                "partner": "chi-hong"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m07-ban-ao-xinh",
+      "date": "2026-07-15",
+      "title": "Bán chịu 1.000 áo thun cho Shop Áo Xinh",
+      "speaker": "h1-be-na",
+      "narrative": "Áo Xinh mở thêm chi nhánh, lấy 1.000 áo thun, công nợ 90 ngày.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Thời Trang Sợi Mây → Shop Áo Xinh",
+          "rows": [
+            [
+              "Áo thun cotton — 1.000 cái × 100.000",
+              "100.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "100.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "8.000.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "108.000.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho",
+          "rows": [
+            [
+              "Áo thun cotton — 1.000 cái × giá vốn 60.000",
+              "60.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Hai bút toán: ghi nhận doanh thu cùng thuế GTGT đầu ra, rồi ghi giá vốn cho hàng xuất kho.",
+      "explanation": "Nợ 131 (Áo Xinh) 108.000.000 / Có 5111 100.000.000, Có 33311 8.000.000; giá vốn 60.000.000. Phải thu Áo Xinh lên 226.800.000, cao nhất từ đầu năm.",
+      "attrs": {
+        "vat": {
+          "base": 100000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu và thuế GTGT đầu ra",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 108000000,
+                "partner": "ao-xinh"
+              },
+              {
+                "account": "5111",
+                "credit": 100000000
+              },
+              {
+                "account": "33311",
+                "credit": 8000000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn hàng bán",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 60000000
+              },
+              {
+                "account": "156",
+                "credit": 60000000,
+                "item": "ao-thun"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m07-nop-gtgt-t6",
+      "date": "2026-07-20",
+      "title": "Nộp thuế GTGT tháng 6",
+      "speaker": "h1-chu-tu",
+      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 6 là 2.400.000 bằng chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Giấy nộp tiền vào ngân sách",
+          "rows": [
+            [
+              "Nội dung",
+              "Thuế GTGT tháng 6"
+            ],
+            [
+              "Số tiền",
+              "2.400.000"
+            ],
+            [
+              "Hình thức",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nộp thuế làm giảm nghĩa vụ với Nhà nước và giảm tiền gửi.",
+      "explanation": "Nợ 33311 / Có 112 2.400.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 2400000
+              },
+              {
+                "account": "112",
+                "credit": 2400000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m07-ve-sinh",
+      "date": "2026-07-25",
+      "title": "Dịch vụ vệ sinh văn phòng",
+      "speaker": "h1-be-na",
+      "narrative": "Thuê dịch vụ vệ sinh văn phòng định kỳ, hóa đơn 4.000.000 chưa thuế, chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty Vệ Sinh Sạch Bóng → Công ty TNHH Thời Trang Sợi Mây",
+          "rows": [
+            [
+              "Dịch vụ vệ sinh văn phòng — 1 tháng × 4.000.000",
+              "4.000.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "4.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "320.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "4.320.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 642 4.000.000, Nợ 1331 320.000 / Có 112 4.320.000.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 4320000,
+          "paymentMethod": "bank"
+        },
+        "vat": {
+          "base": 4000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "642",
+                "debit": 4000000
+              },
+              {
+                "account": "1331",
+                "debit": 320000
+              },
+              {
+                "account": "112",
+                "credit": 4320000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m07-luong",
+      "date": "2026-07-31",
+      "title": "Tính và trả lương tháng 7",
+      "speaker": "h1-chu-tu",
+      "narrative": "Bảng lương tháng 7: bộ phận bán hàng 6.000.000, bộ phận quản lý 8.000.000. Trả ngay bằng chuyển khoản. (Kịch bản giản lược: chưa xét bảo hiểm bắt buộc và thuế TNCN.)",
+      "documents": [
+        {
+          "kind": "Bảng thanh toán tiền lương",
+          "rows": [
+            [
+              "Bộ phận bán hàng",
+              "6.000.000"
+            ],
+            [
+              "Bộ phận quản lý",
+              "8.000.000"
+            ],
+            [
+              "Cộng",
+              "14.000.000"
+            ],
+            [
+              "Hình thức trả",
+              "Chuyển khoản"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi chi phí theo bộ phận (641, 642) đối ứng phải trả người lao động, rồi trả lương.",
+      "explanation": "Lương bán hàng vào 641, lương quản lý vào 642, ghi Có 334. Khi trả: Nợ 334 / Có 112. Ghi thẳng Có 112 không qua 334 cũng được chấm đúng vì số dư cuối cùng như nhau; ghi qua 334 thì sổ ghi rõ hơn thời điểm phát sinh nghĩa vụ.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Tính lương",
+            "lines": [
+              {
+                "account": "641",
+                "debit": 6000000
+              },
+              {
+                "account": "642",
+                "debit": 8000000
+              },
+              {
+                "account": "334",
+                "credit": 14000000
+              }
+            ]
+          },
+          {
+            "memo": "Trả lương",
+            "lines": [
+              {
+                "account": "334",
+                "debit": 14000000
+              },
+              {
+                "account": "112",
+                "credit": 14000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m07-khau-tru",
+      "date": "2026-07-31",
+      "title": "Khấu trừ thuế GTGT tháng 7",
+      "speaker": "h1-chu-tu",
+      "narrative": "Cuối tháng 7, chú Tư lập tờ khai GTGT. Thuế đầu vào được khấu trừ còn 5.120.000, thuế đầu ra phải nộp 8.000.000. Hãy bù trừ phần đầu vào được khấu trừ với đầu ra.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ (số dư 1331)",
+              "5.120.000"
+            ],
+            [
+              "Thuế GTGT đầu ra (số dư 33311)",
+              "8.000.000"
+            ],
+            [
+              "Số được khấu trừ trong kỳ",
+              "5.120.000"
+            ],
+            [
+              "Còn phải nộp",
+              "2.880.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi Nợ thuế GTGT đầu ra, Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Khấu trừ là bù trừ hai số dư: Nợ 33311 / Có 1331 5.120.000. Phần còn lại 2.880.000 là số thuế phải nộp, sẽ nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 5120000
+              },
+              {
+                "account": "1331",
+                "credit": 5120000
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

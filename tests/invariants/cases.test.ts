@@ -116,11 +116,13 @@ for (const id of ids) {
       expect(last.kind).toBe('closing');
     });
 
-    it('tiền và tồn kho không âm tại mọi thời điểm', () => {
+    it('tiền, tồn kho, GTGT khấu trừ không âm; không nộp thừa GTGT đầu ra tại mọi thời điểm', () => {
+      const pre = vatPrefixes(rt.rules, 'vat-reduction-8');
       rt.canonicalLedger(undefined, (ledger, ref) => {
         for (const [k, v] of detailBalances(ledger.entries)) {
           const d = parseDetailKey(k);
-          if (hasPrefix(d.account, ['15', '111', '112'])) expect(v, `${ref.event.id}: ${k}`).toBeGreaterThanOrEqual(0);
+          if (hasPrefix(d.account, ['15', '111', '112', ...pre.input])) expect(v, `${ref.event.id}: ${k}`).toBeGreaterThanOrEqual(0);
+          if (hasPrefix(d.account, pre.output)) expect(v, `${ref.event.id}: ${k} dư Nợ (nộp thừa)`).toBeLessThanOrEqual(0);
         }
       });
     });

@@ -14,9 +14,10 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 - [x] Golden test cho rule đã bật (tests/golden/rules.test.ts, mọi rule đều có test)
 
 ### M2 — Hết Hồ sơ 1
-- [ ] Ít nhất 3 bất thường cài và chấm được (Tầng 2)
-- [ ] Đối chiếu LN kế toán → TNCT khớp engine (Tầng 3 rút gọn)
-- [ ] Mẫu BCTC chính thức TT 99 (hoặc ghi rõ không kiểm chứng được → giữ "Mẫu tạm")
+- [x] Ít nhất 3 bất thường cài và chấm được (Tầng 2): Hồ sơ 1 có 4 bất thường (phải thu tăng nhanh hơn doanh thu, phải thu quá hạn không dự phòng, tồn kho phình, vay ngắn hạn tài trợ TSCĐ)
+- [x] Đối chiếu LN kế toán → TNCT khớp engine (Tầng 3 rút gọn): test `tests/tiers.test.ts` và test kịch bản (chi phí thuế đã ghi = đáp án đối chiếu)
+- [ ] **CHƯA ĐẠT** — Mẫu BCTC chính thức TT 99: không đọc được văn bản gốc (mạng chặn), giữ `temp-simplified` có nhãn "Mẫu tạm" theo phương án dự phòng. Muốn thay: thêm `data/report-templates/tt99-official.json` cùng cấu trúc rồi đổi `reportTemplate` trong `case.json`.
+- [x] Hồ sơ 1 đủ tháng 1–9 + tháng 10–12 gộp (74 nghiệp vụ), người chơi tự ghi thuế TNDN và tự kết chuyển
 
 ### M3 — Hồ sơ 2
 - [ ] Như M2 + Tầng 3 (b)

@@ -1,0 +1,5 @@
+{
+  "reconciliation": {
+    "intro": "Tầng 3 rút gọn: lập bảng đối chiếu từ lợi nhuận kế toán trước thuế sang thu nhập chịu thuế. Chọn từng dòng điều chỉnh từ danh mục rule đang bật, nhập số tiền; engine tự tính đáp án từ rule engine."
+  }
+}

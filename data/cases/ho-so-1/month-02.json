@@ -223,7 +223,7 @@
       "date": "2026-02-20",
       "title": "Nộp thuế GTGT tháng 1",
       "speaker": "h1-chu-tu",
-      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 1 là 12.160.000 bằng chuyển khoản.",
+      "narrative": "Nộp số thuế GTGT còn phải nộp của tháng 1 là 5.760.000 bằng chuyển khoản.",
       "documents": [
         {
           "kind": "Giấy nộp tiền vào ngân sách",
@@ -234,7 +234,7 @@
             ],
             [
               "Số tiền",
-              "12.160.000"
+              "5.760.000"
             ],
             [
               "Hình thức",
@@ -244,7 +244,7 @@
         }
       ],
       "hint": "Nộp thuế làm giảm nghĩa vụ với Nhà nước và giảm tiền gửi.",
-      "explanation": "Nợ 33311 / Có 112 12.160.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
+      "explanation": "Nợ 33311 / Có 112 5.760.000. Trên LCTT đây là \"tiền chi khác cho hoạt động kinh doanh\"; KQKD không đổi vì thuế GTGT không phải chi phí.",
       "attrs": {},
       "answer": {
         "entries": [
@@ -252,11 +252,11 @@
             "lines": [
               {
                 "account": "33311",
-                "debit": 12160000
+                "debit": 5760000
               },
               {
                 "account": "112",
-                "credit": 12160000
+                "credit": 5760000
               }
             ]
           }
@@ -391,6 +391,55 @@
               {
                 "account": "112",
                 "credit": 14000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h1-m02-khau-tru",
+      "date": "2026-02-28",
+      "title": "Khấu trừ thuế GTGT tháng 2",
+      "speaker": "h1-chu-tu",
+      "narrative": "Cuối tháng 2, chú Tư lập tờ khai GTGT. Thuế đầu vào được khấu trừ còn 4.960.000, thuế đầu ra phải nộp 6.400.000. Hãy bù trừ phần đầu vào được khấu trừ với đầu ra.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ (số dư 1331)",
+              "4.960.000"
+            ],
+            [
+              "Thuế GTGT đầu ra (số dư 33311)",
+              "6.400.000"
+            ],
+            [
+              "Số được khấu trừ trong kỳ",
+              "4.960.000"
+            ],
+            [
+              "Còn phải nộp",
+              "1.440.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ghi Nợ thuế GTGT đầu ra, Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Khấu trừ là bù trừ hai số dư: Nợ 33311 / Có 1331 4.960.000. Phần còn lại 1.440.000 là số thuế phải nộp, sẽ nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 4960000
+              },
+              {
+                "account": "1331",
+                "credit": 4960000
               }
             ]
           }

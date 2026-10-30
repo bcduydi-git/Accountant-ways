@@ -1,0 +1,212 @@
+{
+  "intro": "Đây là bộ BCTC năm 2026 do kế toán dịch vụ lập lại cho Sợi Mây và đã khóa sổ. Có cột đầu năm và năm trước. Trong đó có 4 bất thường được cài sẵn. Hãy chọn khoản mục, cho biết bất thường chạm báo cáo nào và chọn lý do.",
+  "injections": [
+    {
+      "id": "h1-t2-hang-cuoi-nam",
+      "date": "2026-12-30",
+      "memo": "Nhập lô áo khoác lớn cuối năm, chưa bán, chưa trả tiền",
+      "lines": [
+        {
+          "account": "156",
+          "debit": 400000000,
+          "item": "ao-khoac"
+        },
+        {
+          "account": "1331",
+          "debit": 32000000
+        },
+        {
+          "account": "331",
+          "credit": 432000000,
+          "partner": "lua-trang"
+        }
+      ]
+    },
+    {
+      "id": "h1-t2-xe-tai",
+      "date": "2026-12-30",
+      "memo": "Mua xe tải giao hàng, ngân hàng giải ngân vay ngắn hạn trả thẳng người bán",
+      "lines": [
+        {
+          "account": "211",
+          "debit": 600000000
+        },
+        {
+          "account": "3411",
+          "credit": 600000000,
+          "partner": "hat-lua"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "tm-tuoi-no",
+      "title": "Thuyết minh: tuổi nợ phải thu khách hàng tại 31/12/2026",
+      "columns": [
+        "Khách hàng",
+        "Số dư",
+        "Tình trạng"
+      ],
+      "rows": [
+        {
+          "code": "tm-ao-xinh",
+          "cells": [
+            "Shop Áo Xinh",
+            "259.200.000",
+            "Trong hạn (lô gần nhất tháng 11)"
+          ]
+        },
+        {
+          "code": "tm-co-ba",
+          "cells": [
+            "Tạp hóa Cô Ba",
+            "31.840.000",
+            "Quá hạn từ tháng 7/2026, khách báo khó khăn, chưa có kế hoạch trả"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tm-vay",
+      "title": "Thuyết minh: vay",
+      "columns": [
+        "Bên cho vay",
+        "Số dư",
+        "Kỳ hạn"
+      ],
+      "rows": [
+        {
+          "code": "tm-vay-hat-lua",
+          "cells": [
+            "Ngân hàng TMCP Hạt Lúa",
+            "800.000.000",
+            "Ngắn hạn: 200 triệu đến 01/03/2027; 600 triệu đến 30/06/2027"
+          ]
+        }
+      ]
+    }
+  ],
+  "reasons": [
+    {
+      "id": "r-phai-thu-tang",
+      "text": "Phải thu tăng nhanh hơn nhiều so với doanh thu: chính sách bán chịu nới lỏng hoặc doanh thu có thể chưa thực thu; cần xem tuổi nợ và vòng quay phải thu."
+    },
+    {
+      "id": "r-chua-du-phong",
+      "text": "Có khoản phải thu quá hạn, khách khó khăn nhưng dòng dự phòng bằng 0: tài sản và lợi nhuận có thể bị phóng đại."
+    },
+    {
+      "id": "r-ton-kho-phinh",
+      "text": "Hàng tồn kho tăng vọt so với đầu năm trong khi giá vốn không tăng tương ứng: rủi ro hàng chậm luân chuyển, đọng vốn."
+    },
+    {
+      "id": "r-vay-ngan-tai-tro-dai",
+      "text": "Tài sản dài hạn được tài trợ bằng vay ngắn hạn: lệch kỳ hạn, rủi ro thanh khoản khi khoản vay đến hạn."
+    },
+    {
+      "id": "r-lctt-lech",
+      "text": "Tiền trên LCTT không khớp với tiền trên CĐKT: lỗi cộng số trên báo cáo."
+    },
+    {
+      "id": "r-khau-hao-vuot-khung",
+      "text": "Khấu hao vượt khung thời gian theo quy định thuế."
+    },
+    {
+      "id": "r-lo-gop",
+      "text": "Giá vốn lớn hơn doanh thu, lỗ gộp."
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "h1-a1",
+      "title": "Phải thu tăng nhanh hơn doanh thu",
+      "pattern": "phải thu tăng nhanh hơn doanh thu",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "131"
+        },
+        {
+          "report": "KQKD",
+          "code": "01"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT",
+        "KQKD"
+      ],
+      "reasonId": "r-phai-thu-tang",
+      "explanation": "Phải thu khách hàng từ 60 triệu đầu năm lên khoảng 291 triệu (gấp gần 5 lần) trong khi doanh thu chỉ tăng khoảng 8% so với năm trước. Phải đối chiếu CĐKT (dòng 131) với KQKD (dòng 01) mới thấy."
+    },
+    {
+      "id": "h1-a2",
+      "title": "Phải thu quá hạn không có dự phòng",
+      "pattern": "phải thu quá hạn không có dự phòng",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "137"
+        },
+        {
+          "report": "TM",
+          "code": "tm-co-ba"
+        },
+        {
+          "report": "CĐKT",
+          "code": "131"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT",
+        "TM"
+      ],
+      "reasonId": "r-chua-du-phong",
+      "explanation": "Thuyết minh tuổi nợ cho thấy Cô Ba nợ 31.840.000 quá hạn từ tháng 7, khách báo khó khăn, nhưng dòng 137 \"Dự phòng phải thu khó đòi\" bằng 0. (Game chưa áp tỷ lệ dự phòng theo TT 48 vì chưa đọc văn bản gốc; ở đây chỉ nhận diện dấu hiệu.)"
+    },
+    {
+      "id": "h1-a3",
+      "title": "Tồn kho phình",
+      "pattern": "tồn kho phình",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "141"
+        },
+        {
+          "report": "CĐKT",
+          "code": "140"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT"
+      ],
+      "reasonId": "r-ton-kho-phinh",
+      "explanation": "Hàng tồn kho cuối năm khoảng 420 triệu so với 240 triệu đầu năm, do một lô áo khoác 400 triệu nhập ngày 30/12 chưa bán, trong khi cả năm chỉ bán khoảng 350 áo khoác."
+    },
+    {
+      "id": "h1-a4",
+      "title": "Vay ngắn hạn tài trợ tài sản dài hạn",
+      "pattern": "vay ngắn hạn tài trợ tài sản dài hạn",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "320"
+        },
+        {
+          "report": "CĐKT",
+          "code": "221"
+        },
+        {
+          "report": "TM",
+          "code": "tm-vay-hat-lua"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT"
+      ],
+      "reasonId": "r-vay-ngan-tai-tro-dai",
+      "explanation": "Xe tải 600 triệu (tài sản dài hạn) được mua bằng khoản vay ngắn hạn 600 triệu đến hạn tháng 6/2027. Vay ngắn hạn lên 800 triệu, trong khi tài sản ngắn hạn không đủ trả nếu ngân hàng không gia hạn."
+    }
+  ]
+}

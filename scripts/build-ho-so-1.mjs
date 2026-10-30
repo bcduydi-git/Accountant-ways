@@ -56,10 +56,14 @@ const bal = (acc) =>
     .filter((l) => l.account === acc)
     .reduce((s, l) => s + (l.debit ?? 0) - (l.credit ?? 0), 0);
 
+// Số GTGT còn phải nộp chốt ở cuối tháng trước (nộp vào tháng sau).
+let pendingVat = -opening.balances.filter((l) => l.account === '33311').reduce((s, l) => s + (l.debit ?? 0) - (l.credit ?? 0), 0);
+
 function vatOffset(id, date, monthText) {
   const input = bal('1331');
   const output = -bal('33311');
-  const amt = Math.min(input, output);
+  const amt = Math.max(0, Math.min(input, output));
+  pendingVat = output - amt;
   if (amt <= 0) return null;
   return simple({
     id, date, speaker: T,
@@ -73,7 +77,8 @@ function vatOffset(id, date, monthText) {
 }
 
 function vatPay(id, date, monthText) {
-  const due = -bal('33311');
+  const due = pendingVat;
+  pendingVat = 0;
   if (due <= 0) return null;
   return simple({
     id, date, speaker: T,
