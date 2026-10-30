@@ -1,0 +1,148 @@
+{
+  "reconciliation": {
+    "intro": "Lập bảng đối chiếu LN kế toán → thu nhập chịu thuế. Khoản của rule đang tắt (chưa kiểm chứng) hiện ở cuối bảng để tham khảo, không tính."
+  },
+  "companyBook": {
+    "intro": "Sổ do kế toán cũ lập cho mục đích thuế: bằng sổ của bạn cộng thêm hai bút toán sai (treo chi phí hội chợ ở 242, vốn hóa lãi vay sau khi máy đã dùng). Ngoài ra còn hai việc chưa xử lý: nợ khó đòi của Đồi Thông và ván hỏng. Lập bút toán điều chỉnh về bản chất.",
+    "injections": [
+      {
+        "id": "h2-cb-hoi-cho",
+        "date": "2026-11-20",
+        "memo": "Chi phí tham gia hội chợ nội thất tháng 11 (kế toán cũ treo vào 242)",
+        "lines": [
+          {
+            "account": "242",
+            "debit": 90000000
+          },
+          {
+            "account": "112",
+            "credit": 90000000
+          }
+        ]
+      },
+      {
+        "id": "h2-cb-von-hoa-lai",
+        "date": "2026-12-31",
+        "memo": "Kế toán cũ vốn hóa lãi vay tháng 5–12 vào nguyên giá máy CNC",
+        "lines": [
+          {
+            "account": "211",
+            "debit": 32000000
+          },
+          {
+            "account": "635",
+            "credit": 32000000
+          }
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "h2-adj-hoi-cho",
+      "category": "prepaid-should-expense",
+      "title": "Chi phí hội chợ tháng 11 đang treo ở 242",
+      "evidence": [
+        "Hội chợ nội thất diễn ra 20–23/11/2026, đã kết thúc.",
+        "Hợp đồng không tạo lợi ích cho kỳ sau (không có đơn hàng ký kèm).",
+        "Sổ đang ghi Nợ 242 90.000.000."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "641",
+                "debit": 90000000
+              },
+              {
+                "account": "242",
+                "credit": 90000000
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Chi phí hội chợ đã diễn ra là chi phí bán hàng của kỳ: Nợ 641 / Có 242 90.000.000. Treo ở 242 làm tài sản và lợi nhuận bị phóng đại."
+    },
+    {
+      "id": "h2-adj-du-phong",
+      "category": "provision-overdue",
+      "title": "Nợ quá hạn của Đồi Thông chưa trích dự phòng",
+      "evidence": [
+        "Đồi Thông nợ 108.000.000 từ tháng 2/2026, quá hạn từ tháng 3, đã gửi 3 lần thư nhắc.",
+        "Biên bản họp: trích dự phòng 54.000.000 (số kịch bản cho sẵn; game không áp tỷ lệ TT 48/2019 vì chưa đọc văn bản gốc)."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "642",
+                "debit": 54000000
+              },
+              {
+                "account": "2293",
+                "credit": 54000000
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Nợ 642 / Có 2293 54.000.000. Phải thu trên CĐKT được trình bày thuần sau dự phòng. Về thuế: rule dự phòng TT 48 đang tắt nên bảng đối chiếu không điều chỉnh khoản này."
+    },
+    {
+      "id": "h2-adj-lai-vay",
+      "category": "interest-capitalization",
+      "title": "Lãi vay bị vốn hóa sau khi máy đã đưa vào sử dụng",
+      "evidence": [
+        "Máy CNC đưa vào sử dụng từ 01/05/2026.",
+        "Kế toán cũ chuyển 32.000.000 lãi vay tháng 5–12 từ 635 sang nguyên giá máy (Nợ 211 / Có 635)."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "635",
+                "debit": 32000000
+              },
+              {
+                "account": "211",
+                "credit": 32000000
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Tài sản đã sẵn sàng sử dụng thì lãi vay không còn được vốn hóa: Nợ 635 / Có 211 32.000.000. (Giản lược: không tính lại khấu hao của phần nguyên giá sai.)"
+    },
+    {
+      "id": "h2-adj-van-hong",
+      "category": "damaged-inventory",
+      "title": "Ván MDF ngấm nước chưa xử lý",
+      "evidence": [
+        "Biên bản kiểm kê 31/12: 50 tấm ván MDF ngấm nước, không còn dùng được, giá gốc 15.000.000.",
+        "Không có bồi thường; giám đốc duyệt xử lý vào giá vốn."
+      ],
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "632",
+                "debit": 15000000
+              },
+              {
+                "account": "152",
+                "credit": 15000000,
+                "item": "van-mdf"
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Nợ 632 / Có 152 (ván MDF) 15.000.000. Hàng hỏng còn nằm trong kho làm tồn kho bị phóng đại."
+    }
+  ]
+}

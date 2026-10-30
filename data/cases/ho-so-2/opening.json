@@ -1,0 +1,136 @@
+{
+  "date": "2026-01-01",
+  "balances": [
+    {
+      "account": "111",
+      "debit": 100000000
+    },
+    {
+      "account": "112",
+      "debit": 300000000
+    },
+    {
+      "account": "131",
+      "debit": 600000000,
+      "partner": "pho-moi"
+    },
+    {
+      "account": "152",
+      "debit": 90000000,
+      "item": "van-mdf"
+    },
+    {
+      "account": "155",
+      "debit": 140000000,
+      "item": "ghe-go"
+    },
+    {
+      "account": "211",
+      "debit": 3360000000
+    },
+    {
+      "account": "2141",
+      "credit": 408000000
+    },
+    {
+      "account": "331",
+      "credit": 400000000,
+      "partner": "sao-mai"
+    },
+    {
+      "account": "33311",
+      "credit": 50000000
+    },
+    {
+      "account": "3334",
+      "credit": 30000000
+    },
+    {
+      "account": "4111",
+      "credit": 3000000000
+    },
+    {
+      "account": "4211",
+      "credit": 702000000
+    }
+  ],
+  "priorYearRevenue": 9000000000,
+  "charterCapital": {
+    "registered": 5000000000,
+    "contributed": 3000000000
+  },
+  "priorYearIncomeStatement": {
+    "11": 6700000000,
+    "21": 5000000,
+    "22": 0,
+    "25": 240000000,
+    "26": 1100000000,
+    "31": 0,
+    "32": 0,
+    "51": 164050000,
+    "01": 9000000000,
+    "02": 0
+  },
+  "inventory": [
+    {
+      "account": "152",
+      "item": "van-mdf",
+      "qty": 300,
+      "unitCost": 300000
+    },
+    {
+      "account": "155",
+      "item": "ghe-go",
+      "qty": 200,
+      "unitCost": 700000
+    }
+  ],
+  "fixedAssets": [
+    {
+      "id": "day-chuyen",
+      "name": "Dây chuyền máy cưa, bào",
+      "account": "211",
+      "cost": 1200000000,
+      "accumulated": 120000000,
+      "monthlyDepreciation": 10000000,
+      "usefulLifeMonths": 120,
+      "type": "general",
+      "businessUse": true
+    },
+    {
+      "id": "o-to",
+      "name": "Ô tô 7 chỗ chở người",
+      "account": "211",
+      "cost": 1920000000,
+      "accumulated": 240000000,
+      "monthlyDepreciation": 20000000,
+      "usefulLifeMonths": 96,
+      "type": "passenger-car",
+      "seats": 7,
+      "businessUse": true
+    },
+    {
+      "id": "ban-ghe-nha-rieng",
+      "name": "Bộ bàn ghế gỗ đặt tại nhà riêng giám đốc",
+      "account": "211",
+      "cost": 240000000,
+      "accumulated": 48000000,
+      "monthlyDepreciation": 4000000,
+      "usefulLifeMonths": 60,
+      "type": "general",
+      "businessUse": false
+    },
+    {
+      "id": "may-cnc",
+      "name": "Máy CNC cắt gỗ",
+      "account": "211",
+      "cost": 600000000,
+      "accumulated": 0,
+      "monthlyDepreciation": 5000000,
+      "usefulLifeMonths": 120,
+      "type": "general",
+      "businessUse": true,
+      "acquiredInYear": true
+    }
+  ]
+}

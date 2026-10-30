@@ -1,0 +1,661 @@
+{
+  "id": "month-12",
+  "label": "Tháng 12",
+  "intro": [
+    {
+      "speaker": "h2-co-ngan",
+      "text": "Tháng cuối: tự tính thuế TNDN và tự kết chuyển. Sau đó làm Tầng 2 và Tầng 3."
+    }
+  ],
+  "outro": [
+    {
+      "speaker": "h2-co-ngan",
+      "text": "Khóa sổ năm xong. Mời làm Tầng 2 và Tầng 3!"
+    }
+  ],
+  "events": [
+    {
+      "id": "h2-m12-mua-nvl",
+      "date": "2026-12-05",
+      "title": "Mua ván MDF và sơn keo tháng 12",
+      "speaker": "h2-anh-cua",
+      "narrative": "Anh Cưa nhập 1.425 tấm ván MDF (300.000/tấm) và 95 thùng sơn keo (500.000/thùng) của Sao Mai, trả vào tháng sau.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty Ván Ép Sao Mai → Công ty TNHH Xưởng Mộc Chim Sẻ",
+          "rows": [
+            [
+              "Ván MDF — 1.425 tấm × 300.000",
+              "427.500.000"
+            ],
+            [
+              "Sơn và keo — 95 thùng × 500.000",
+              "47.500.000"
+            ],
+            [
+              "Cộng tiền hàng, dịch vụ",
+              "475.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "38.000.000"
+            ],
+            [
+              "Tổng cộng thanh toán",
+              "513.000.000"
+            ],
+            [
+              "Hình thức thanh toán",
+              "Mua chịu — thanh toán sau"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nguyên vật liệu nhập kho theo từng loại; mỗi loại một dòng chi tiết.",
+      "explanation": "Nợ 152 (ván MDF) 427.500.000, Nợ 152 (sơn keo) 47.500.000, Nợ 1331 38.000.000 / Có 331 (Sao Mai) 513.000.000.",
+      "attrs": {
+        "invoice": {
+          "totalInclVAT": 513000000,
+          "paymentMethod": "credit"
+        },
+        "vat": {
+          "base": 475000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "152",
+                "debit": 427500000,
+                "item": "van-mdf"
+              },
+              {
+                "account": "152",
+                "debit": 47500000,
+                "item": "son-keo"
+              },
+              {
+                "account": "1331",
+                "debit": 38000000
+              },
+              {
+                "account": "331",
+                "credit": 513000000,
+                "partner": "sao-mai"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-cong-no",
+      "date": "2026-12-10",
+      "title": "Thu tiền khách, trả tiền nhà cung cấp",
+      "speaker": "h2-co-ngan",
+      "narrative": "Phố Mới chuyển khoản 972.000.000 (lô ghế tháng 11). Công ty trả Sao Mai 486.000.000 (ván, sơn tháng 11).",
+      "documents": [
+        {
+          "kind": "Sao kê ngân hàng",
+          "rows": [
+            [
+              "Thu từ Siêu thị Nội Thất Phố Mới",
+              "972.000.000"
+            ],
+            [
+              "Chi cho Công ty Ván Ép Sao Mai",
+              "486.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Thu và chi là hai việc riêng với hai đối tượng khác nhau: ghi qua tiền gửi, không bù trừ thẳng phải thu Phố Mới với phải trả Sao Mai.",
+      "explanation": "Nợ 112 / Có 131 (Phố Mới); Nợ 331 (Sao Mai) / Có 112. Dù tiền \"vào rồi ra\", phải thu và phải trả của hai đối tượng khác nhau không được bù trừ (quy tắc bản chất). Trên LCTT: tiền thu bán hàng và tiền chi trả nhà cung cấp hiện riêng.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Thu tiền Phố Mới",
+            "lines": [
+              {
+                "account": "112",
+                "debit": 972000000
+              },
+              {
+                "account": "131",
+                "credit": 972000000,
+                "partner": "pho-moi"
+              }
+            ]
+          },
+          {
+            "memo": "Trả Sao Mai",
+            "lines": [
+              {
+                "account": "331",
+                "debit": 486000000,
+                "partner": "sao-mai"
+              },
+              {
+                "account": "112",
+                "credit": 486000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-nop-gtgt",
+      "date": "2026-12-20",
+      "title": "Nộp thuế GTGT tháng 11",
+      "speaker": "h2-co-ngan",
+      "narrative": "Nộp thuế GTGT còn phải nộp của tháng 11: 36.000.000, chuyển khoản.",
+      "documents": [
+        {
+          "kind": "Giấy nộp tiền vào ngân sách",
+          "rows": [
+            [
+              "Nội dung",
+              "Thuế GTGT tháng 11"
+            ],
+            [
+              "Số tiền",
+              "36.000.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 33311 / Có 112 36.000.000. Không ảnh hưởng KQKD.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 36000000
+              },
+              {
+                "account": "112",
+                "credit": 36000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-lai-vay",
+      "date": "2026-12-25",
+      "title": "Trả lãi vay tháng 12",
+      "speaker": "h2-co-ngan",
+      "narrative": "Ngân hàng trừ tài khoản lãi vay tháng 12: 480.000.000 × 10% / 12 = 4.000.000.",
+      "documents": [
+        {
+          "kind": "Giấy báo Nợ",
+          "rows": [
+            [
+              "Lãi vay",
+              "4.000.000"
+            ]
+          ]
+        }
+      ],
+      "explanation": "Nợ 635 / Có 112 4.000.000. Máy CNC đã dùng nên lãi vay ghi chi phí tài chính, không vốn hóa.",
+      "attrs": {
+        "interest": {
+          "amount": 4000000,
+          "principal": 480000000,
+          "lender": "hat-lua"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "635",
+                "debit": 4000000
+              },
+              {
+                "account": "112",
+                "credit": 4000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-luong",
+      "date": "2026-12-28",
+      "title": "Tính và trả lương tháng 12",
+      "speaker": "h2-co-ngan",
+      "narrative": "Bảng lương tháng 12: công nhân trực tiếp 120.000.000, quản lý xưởng 30.000.000, bán hàng 20.000.000, văn phòng 50.000.000. Trả ngay bằng chuyển khoản. (Giản lược: chưa xét bảo hiểm, thuế TNCN.)",
+      "documents": [
+        {
+          "kind": "Bảng lương",
+          "rows": [
+            [
+              "Công nhân trực tiếp sản xuất",
+              "120.000.000"
+            ],
+            [
+              "Quản lý xưởng",
+              "30.000.000"
+            ],
+            [
+              "Bán hàng",
+              "20.000.000"
+            ],
+            [
+              "Quản lý doanh nghiệp",
+              "50.000.000"
+            ],
+            [
+              "Cộng",
+              "220.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Lương công nhân trực tiếp → 622; quản lý xưởng → 627; bán hàng → 641; văn phòng → 642.",
+      "explanation": "Nợ 622 120.000.000, Nợ 627 30.000.000, Nợ 641 20.000.000, Nợ 642 50.000.000 / Có 334 220.000.000; rồi Nợ 334 / Có 112. Lương ở xưởng đi vào giá thành sản phẩm, không vào thẳng KQKD.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Tính lương",
+            "lines": [
+              {
+                "account": "622",
+                "debit": 120000000
+              },
+              {
+                "account": "627",
+                "debit": 30000000
+              },
+              {
+                "account": "641",
+                "debit": 20000000
+              },
+              {
+                "account": "642",
+                "debit": 50000000
+              },
+              {
+                "account": "334",
+                "credit": 220000000
+              }
+            ]
+          },
+          {
+            "memo": "Trả lương",
+            "lines": [
+              {
+                "account": "334",
+                "debit": 220000000
+              },
+              {
+                "account": "112",
+                "credit": 220000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-khau-hao",
+      "date": "2026-12-30",
+      "title": "Khấu hao TSCĐ tháng 12",
+      "speaker": "h2-co-ngan",
+      "narrative": "Trích khấu hao tháng 12: dây chuyền cưa bào 10.000.000, máy CNC 5.000.000 (xưởng); ô tô 7 chỗ 20.000.000 và bộ bàn ghế đặt tại nhà riêng giám đốc 4.000.000 (ghi chi phí quản lý).",
+      "documents": [
+        {
+          "kind": "Bảng tính khấu hao",
+          "rows": [
+            [
+              "Dây chuyền cưa bào (xưởng)",
+              "10.000.000"
+            ],
+            [
+              "Máy CNC (xưởng)",
+              "5.000.000"
+            ],
+            [
+              "Ô tô 7 chỗ (quản lý)",
+              "20.000.000"
+            ],
+            [
+              "Bộ bàn ghế tại nhà riêng giám đốc (quản lý)",
+              "4.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Khấu hao máy xưởng vào 627; tài sản văn phòng vào 642. Phân bổ CCDC: Có 242.",
+      "explanation": "Nợ 627 15.000.000, Nợ 642 24.000.000 / Có 2141 39.000.000. Bộ bàn ghế đặt ở nhà riêng giám đốc không dùng cho sản xuất kinh doanh: kế toán vẫn trích, nhưng khấu hao này không được trừ khi tính thuế TNDN. Ô tô có nguyên giá 1,92 tỷ: rule trần khấu hao ô tô chưa kiểm chứng văn bản gốc nên đang tắt.",
+      "attrs": {
+        "depreciation": [
+          {
+            "assetId": "day-chuyen",
+            "amount": 10000000
+          },
+          {
+            "assetId": "o-to",
+            "amount": 20000000
+          },
+          {
+            "assetId": "ban-ghe-nha-rieng",
+            "amount": 4000000
+          },
+          {
+            "assetId": "may-cnc",
+            "amount": 5000000
+          }
+        ]
+      },
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "627",
+                "debit": 15000000
+              },
+              {
+                "account": "642",
+                "debit": 24000000
+              },
+              {
+                "account": "2141",
+                "credit": 39000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-gia-thanh",
+      "date": "2026-12-30",
+      "title": "Xuất NVL, tập hợp chi phí và nhập kho 950 ghế",
+      "speaker": "h2-anh-cua",
+      "narrative": "Xuất toàn bộ ván, sơn mua trong tháng (475.000.000) cho sản xuất. Cuối tháng tập hợp chi phí 621, 622, 627 vào 154 và nhập kho 950 ghế hoàn thành.",
+      "documents": [
+        {
+          "kind": "Phiếu tính giá thành",
+          "rows": [
+            [
+              "Dở dang đầu kỳ",
+              "0"
+            ],
+            [
+              "Chi phí NVL trực tiếp (621)",
+              "475.000.000"
+            ],
+            [
+              "Chi phí nhân công trực tiếp (622)",
+              "120.000.000"
+            ],
+            [
+              "Chi phí sản xuất chung (627)",
+              "45.000.000"
+            ],
+            [
+              "Dở dang cuối kỳ",
+              "0"
+            ],
+            [
+              "Giá thành 950 ghế hoàn thành",
+              "640.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Ba bước: Nợ 621 / Có 152; Nợ 154 / Có 621, 622, 627; Nợ 155 / Có 154 theo giá thành hoàn thành.",
+      "explanation": "Nợ 621 / Có 152 475.000.000; Nợ 154 640.000.000 / Có 621 475.000.000, Có 622 120.000.000, Có 627 45.000.000; Nợ 155 / Có 154 640.000.000. Chi phí sản xuất chưa vào KQKD cho tới khi bán.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "memo": "Xuất NVL",
+            "lines": [
+              {
+                "account": "621",
+                "debit": 475000000
+              },
+              {
+                "account": "152",
+                "credit": 427500000,
+                "item": "van-mdf"
+              },
+              {
+                "account": "152",
+                "credit": 47500000,
+                "item": "son-keo"
+              }
+            ]
+          },
+          {
+            "memo": "Tập hợp chi phí",
+            "lines": [
+              {
+                "account": "154",
+                "debit": 640000000
+              },
+              {
+                "account": "621",
+                "credit": 475000000
+              },
+              {
+                "account": "622",
+                "credit": 120000000
+              },
+              {
+                "account": "627",
+                "credit": 45000000
+              }
+            ]
+          },
+          {
+            "memo": "Nhập kho thành phẩm",
+            "lines": [
+              {
+                "account": "155",
+                "debit": 640000000,
+                "item": "ghe-go"
+              },
+              {
+                "account": "154",
+                "credit": 640000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-ban-pho-moi",
+      "date": "2026-12-30",
+      "title": "Bán 950 ghế cho Siêu thị Nội Thất Phố Mới",
+      "speaker": "h2-ong-bao",
+      "narrative": "Giao 950 ghế gỗ cho Siêu thị Nội Thất Phố Mới, giá 1.000.000/cái, thu tiền vào ngày 10 tháng sau. Giá vốn theo giá thành lô hoàn thành trong tháng.",
+      "documents": [
+        {
+          "kind": "Hóa đơn GTGT",
+          "title": "Công ty TNHH Xưởng Mộc Chim Sẻ → Siêu thị Nội Thất Phố Mới",
+          "rows": [
+            [
+              "Ghế gỗ — 950 cái × 1.000.000",
+              "950.000.000"
+            ],
+            [
+              "Thuế GTGT (8%)",
+              "76.000.000"
+            ],
+            [
+              "Tổng cộng",
+              "1.026.000.000"
+            ]
+          ]
+        },
+        {
+          "kind": "Phiếu xuất kho thành phẩm",
+          "rows": [
+            [
+              "Ghế gỗ — 950 cái (giá thành lô tháng 12)",
+              "640.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Bán sản phẩm tự sản xuất: doanh thu bán sản phẩm (5112); giá vốn ghi Có 155.",
+      "explanation": "Nợ 131 (Siêu thị Nội Thất Phố Mới) 1.026.000.000 / Có 5112 950.000.000, Có 33311 76.000.000; Nợ 632 / Có 155 640.000.000.",
+      "attrs": {
+        "vat": {
+          "base": 950000000,
+          "ruleId": "vat-reduction-8"
+        }
+      },
+      "answer": {
+        "entries": [
+          {
+            "memo": "Doanh thu",
+            "lines": [
+              {
+                "account": "131",
+                "debit": 1026000000,
+                "partner": "pho-moi"
+              },
+              {
+                "account": "5112",
+                "credit": 950000000
+              },
+              {
+                "account": "33311",
+                "credit": 76000000
+              }
+            ]
+          },
+          {
+            "memo": "Giá vốn",
+            "lines": [
+              {
+                "account": "632",
+                "debit": 640000000
+              },
+              {
+                "account": "155",
+                "credit": 640000000,
+                "item": "ghe-go"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-khau-tru",
+      "date": "2026-12-30",
+      "title": "Khấu trừ thuế GTGT tháng 12",
+      "speaker": "h2-co-ngan",
+      "narrative": "Lập tờ khai GTGT tháng 12: thuế đầu vào được khấu trừ 38.000.000, thuế đầu ra 76.000.000. Bù trừ phần được khấu trừ.",
+      "documents": [
+        {
+          "kind": "Bảng kê thuế GTGT",
+          "rows": [
+            [
+              "Thuế GTGT đầu vào được khấu trừ",
+              "38.000.000"
+            ],
+            [
+              "Thuế GTGT đầu ra",
+              "76.000.000"
+            ],
+            [
+              "Số khấu trừ trong kỳ",
+              "38.000.000"
+            ],
+            [
+              "Còn phải nộp",
+              "38.000.000"
+            ]
+          ]
+        }
+      ],
+      "hint": "Nợ thuế GTGT đầu ra / Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.",
+      "explanation": "Nợ 33311 / Có 1331 38.000.000. Còn phải nộp 38.000.000, nộp vào tháng sau.",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "33311",
+                "debit": 38000000
+              },
+              {
+                "account": "1331",
+                "credit": 38000000
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-thue-tndn",
+      "date": "2026-12-31",
+      "title": "Tính và ghi chi phí thuế TNDN năm 2026",
+      "kind": "cit",
+      "speaker": "h2-co-ngan",
+      "narrative": "Tính thuế TNDN: LN kế toán trước thuế + các khoản không được trừ của rule đang bật (sửa máy trả tiền mặt tháng 5, tiền phạt tháng 8, khấu hao tài sản không dùng cho SXKD), nhân thuế suất theo doanh thu năm trước 9 tỷ.",
+      "documents": [],
+      "hint": "Rule đang tắt (trần ô tô, lãi vay tương ứng vốn góp thiếu) không được tính.",
+      "explanation": "Nợ 8211 / Có 3334. Bảng đối chiếu chi tiết ở Tầng 3 (a).",
+      "attrs": {},
+      "answer": {
+        "entries": [
+          {
+            "lines": [
+              {
+                "account": "8211",
+                "debit": {
+                  "$calc": "citExpense"
+                }
+              },
+              {
+                "account": "3334",
+                "credit": {
+                  "$calc": "citExpense"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "h2-m12-ket-chuyen",
+      "date": "2026-12-31",
+      "title": "Kết chuyển cuối năm",
+      "kind": "closing",
+      "speaker": "h2-co-ngan",
+      "narrative": "Kết chuyển doanh thu, thu nhập khác và mọi chi phí (gồm chi phí thuế TNDN) sang 911, rồi kết chuyển lãi sang 4212. Lưu ý 621, 622, 627 đã về 0 qua 154.",
+      "documents": [],
+      "hint": "Doanh thu 5112 và thu nhập 711 ghi Nợ; 632, 635, 641, 642, 811, 8211 ghi Có; phần chênh lệch của 911 sang 4212.",
+      "explanation": "Sau kết chuyển mọi TK loại 5–9 về 0; LNST trên KQKD bằng phần tăng của 4212.",
+      "attrs": {},
+      "answer": {
+        "$calc": "closing"
+      }
+    }
+  ]
+}

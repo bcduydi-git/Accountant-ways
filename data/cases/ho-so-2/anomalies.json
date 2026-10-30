@@ -1,0 +1,287 @@
+{
+  "intro": "BCTC năm 2026 do kế toán dịch vụ lập lại để đi vay ngân hàng, đã khóa sổ. Có 4 bất thường được cài sẵn.",
+  "injections": [
+    {
+      "id": "h2-t2-tich-tru-van",
+      "date": "2026-12-30",
+      "memo": "Mua tích trữ ván MDF cuối năm, chưa trả tiền",
+      "lines": [
+        {
+          "account": "152",
+          "debit": 1200000000,
+          "item": "van-mdf"
+        },
+        {
+          "account": "1331",
+          "debit": 96000000
+        },
+        {
+          "account": "331",
+          "credit": 1296000000,
+          "partner": "sao-mai"
+        }
+      ]
+    },
+    {
+      "id": "h2-t2-doi-khau-hao",
+      "date": "2026-12-30",
+      "memo": "Đổi thời gian khấu hao dây chuyền từ 10 lên 20 năm, ghi giảm khấu hao cả năm",
+      "lines": [
+        {
+          "account": "2141",
+          "debit": 60000000
+        },
+        {
+          "account": "632",
+          "credit": 60000000
+        }
+      ]
+    },
+    {
+      "id": "h2-t2-vay-ngan",
+      "date": "2026-12-30",
+      "memo": "Vay ngắn hạn 3 tỷ",
+      "lines": [
+        {
+          "account": "112",
+          "debit": 3000000000
+        },
+        {
+          "account": "3411",
+          "credit": 3000000000,
+          "partner": "hat-lua-nh"
+        }
+      ]
+    },
+    {
+      "id": "h2-t2-xay-xuong",
+      "date": "2026-12-30",
+      "memo": "Chi xây nhà xưởng mới (dở dang)",
+      "lines": [
+        {
+          "account": "241",
+          "debit": 2800000000
+        },
+        {
+          "account": "112",
+          "credit": 2800000000
+        }
+      ]
+    },
+    {
+      "id": "h2-t2-lai-vay-ngan",
+      "date": "2026-12-30",
+      "memo": "Lãi vay ngắn hạn và phí thu xếp vốn",
+      "lines": [
+        {
+          "account": "635",
+          "debit": 180000000
+        },
+        {
+          "account": "112",
+          "credit": 180000000
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "tm-tscd",
+      "title": "Thuyết minh: khấu hao TSCĐ trong năm",
+      "columns": [
+        "Nhóm tài sản",
+        "Khấu hao năm nay",
+        "Ghi chú"
+      ],
+      "rows": [
+        {
+          "code": "tm-kh-day-chuyen",
+          "cells": [
+            "Dây chuyền cưa bào",
+            "60.000.000",
+            "Năm trước 120.000.000; đổi thời gian khấu hao từ 10 năm lên 20 năm, áp dụng từ 01/2026"
+          ]
+        },
+        {
+          "code": "tm-kh-cnc",
+          "cells": [
+            "Máy CNC",
+            "40.000.000",
+            "Từ tháng 5"
+          ]
+        },
+        {
+          "code": "tm-kh-van-phong",
+          "cells": [
+            "Ô tô, bàn ghế",
+            "288.000.000",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tm-von",
+      "title": "Thuyết minh: vốn chủ sở hữu và vay",
+      "columns": [
+        "Khoản mục",
+        "Số tiền",
+        "Ghi chú"
+      ],
+      "rows": [
+        {
+          "code": "tm-von-dieu-le",
+          "cells": [
+            "Vốn điều lệ đăng ký",
+            "5.000.000.000",
+            "Đã góp 4.000.000.000, còn thiếu 1.000.000.000"
+          ]
+        },
+        {
+          "code": "tm-vay-ngan",
+          "cells": [
+            "Vay ngắn hạn Hạt Lúa",
+            "3.000.000.000",
+            "Đến hạn 12/2027, dùng xây nhà xưởng mới"
+          ]
+        },
+        {
+          "code": "tm-vay-dai",
+          "cells": [
+            "Vay trung hạn Hạt Lúa",
+            "480.000.000",
+            "Mua máy CNC"
+          ]
+        }
+      ]
+    }
+  ],
+  "reasons": [
+    {
+      "id": "r-ton-kho",
+      "text": "Hàng tồn kho tăng vọt cuối năm so với nhu cầu sản xuất: đọng vốn, rủi ro hàng chậm luân chuyển."
+    },
+    {
+      "id": "r-khau-hao",
+      "text": "Khấu hao giảm đột ngột do đổi thời gian khấu hao: lợi nhuận được \"làm đẹp\", cần xem lý do thay đổi ước tính."
+    },
+    {
+      "id": "r-von-gop",
+      "text": "Vốn điều lệ góp chưa đủ trong khi chi phí lãi vay lớn: chủ sở hữu dùng vốn vay thay vốn góp; phần lãi tương ứng có thể không được trừ khi tính thuế."
+    },
+    {
+      "id": "r-vay-ngan",
+      "text": "Dùng vay ngắn hạn tài trợ xây dựng tài sản dài hạn: lệch kỳ hạn, rủi ro thanh khoản."
+    },
+    {
+      "id": "r-lctt-lech",
+      "text": "Tiền trên LCTT không khớp với tiền trên CĐKT."
+    },
+    {
+      "id": "r-doanh-thu-am",
+      "text": "Doanh thu bị ghi âm thay vì dùng khoản giảm trừ."
+    },
+    {
+      "id": "r-ben-lien-quan",
+      "text": "Phải thu bên liên quan lớn bất thường."
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "h2-a1",
+      "title": "Tồn kho phình",
+      "pattern": "tồn kho phình",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "141"
+        },
+        {
+          "report": "CĐKT",
+          "code": "140"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT"
+      ],
+      "reasonId": "r-ton-kho",
+      "explanation": "Nguyên vật liệu cuối năm hơn 1,2 tỷ, gấp khoảng 3 tháng nhu cầu, trong khi đầu năm chỉ 90 triệu. Mua ngày 30/12, chưa trả tiền."
+    },
+    {
+      "id": "h2-a2",
+      "title": "Khấu hao bất thường",
+      "pattern": "khấu hao bất thường",
+      "lineRefs": [
+        {
+          "report": "TM",
+          "code": "tm-kh-day-chuyen"
+        },
+        {
+          "report": "CĐKT",
+          "code": "222"
+        },
+        {
+          "report": "LCTT",
+          "code": "02"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT",
+        "KQKD",
+        "TM"
+      ],
+      "reasonId": "r-khau-hao",
+      "explanation": "Thuyết minh cho thấy khấu hao dây chuyền chỉ còn 60 triệu so với 120 triệu năm trước vì đổi thời gian khấu hao giữa chừng. Giá vốn giảm 60 triệu, lợi nhuận tăng tương ứng."
+    },
+    {
+      "id": "h2-a3",
+      "title": "Vốn góp chưa đủ trong khi lãi vay lớn",
+      "pattern": "vốn góp chưa đủ trong khi lãi vay lớn",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "411"
+        },
+        {
+          "report": "KQKD",
+          "code": "22"
+        },
+        {
+          "report": "TM",
+          "code": "tm-von-dieu-le"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT",
+        "KQKD",
+        "TM"
+      ],
+      "reasonId": "r-von-gop",
+      "explanation": "Vốn góp mới 4 trên 5 tỷ đăng ký, trong khi chi phí tài chính hơn 200 triệu. Chủ sở hữu đang dùng tiền vay thay cho vốn phải góp."
+    },
+    {
+      "id": "h2-a4",
+      "title": "Vay ngắn hạn tài trợ tài sản dài hạn",
+      "pattern": "vay ngắn hạn tài trợ tài sản dài hạn",
+      "lineRefs": [
+        {
+          "report": "CĐKT",
+          "code": "320"
+        },
+        {
+          "report": "CĐKT",
+          "code": "240"
+        },
+        {
+          "report": "TM",
+          "code": "tm-vay-ngan"
+        }
+      ],
+      "reportsTouched": [
+        "CĐKT"
+      ],
+      "reasonId": "r-vay-ngan",
+      "explanation": "Khoản vay ngắn hạn 3 tỷ đến hạn năm 2027 được dùng xây nhà xưởng (XDCB dở dang 2,8 tỷ), là tài sản thu hồi vốn trong nhiều năm."
+    }
+  ]
+}

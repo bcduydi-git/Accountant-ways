@@ -126,3 +126,42 @@ export function simple(o) {
 }
 
 export const monthLabel = (m) => `Tháng ${m}`;
+
+/** Bộ theo dõi GTGT: khấu trừ cuối tháng, nộp số còn phải nộp của tháng trước. */
+export function makeVat({ opening, all, speaker, inputAcc = '1331', outputAcc = '33311' }) {
+  const bal = (acc) =>
+    [...opening.balances, ...all.flatMap((e) => ('entries' in e.answer ? e.answer.entries.flatMap((x) => x.lines) : []))]
+      .filter((l) => l.account === acc)
+      .reduce((s, l) => s + (typeof l.debit === 'number' ? l.debit : 0) - (typeof l.credit === 'number' ? l.credit : 0), 0);
+  let pending = -opening.balances.filter((l) => l.account === outputAcc).reduce((s, l) => s + (l.debit ?? 0) - (l.credit ?? 0), 0);
+  return {
+    bal,
+    offset(id, date, monthText) {
+      const input = bal(inputAcc);
+      const output = -bal(outputAcc);
+      const amt = Math.max(0, Math.min(input, output));
+      pending = output - amt;
+      if (amt <= 0) return null;
+      return simple({
+        id, date, speaker, title: `Khấu trừ thuế GTGT ${monthText}`,
+        narrative: `Lập tờ khai GTGT ${monthText}: thuế đầu vào được khấu trừ ${fmt(input)}, thuế đầu ra ${fmt(output)}. Bù trừ phần được khấu trừ.`,
+        documents: [doc('Bảng kê thuế GTGT', [['Thuế GTGT đầu vào được khấu trừ', fmt(input)], ['Thuế GTGT đầu ra', fmt(output)], ['Số khấu trừ trong kỳ', fmt(amt)], [output > input ? 'Còn phải nộp' : 'Chuyển kỳ sau', fmt(Math.abs(output - input))]])],
+        hint: 'Nợ thuế GTGT đầu ra / Có thuế GTGT được khấu trừ, với số nhỏ hơn trong hai số dư.',
+        explanation: `Nợ ${outputAcc} / Có ${inputAcc} ${fmt(amt)}.${output > input ? ` Còn phải nộp ${fmt(output - input)}, nộp vào tháng sau.` : ` Đầu vào còn ${fmt(input - output)} chuyển kỳ sau.`}`,
+        entries: [[L.dr(outputAcc, amt), L.cr(inputAcc, amt)]],
+      });
+    },
+    pay(id, date, monthText) {
+      const due = pending;
+      pending = 0;
+      if (due <= 0) return null;
+      return simple({
+        id, date, speaker, title: `Nộp thuế GTGT ${monthText}`,
+        narrative: `Nộp thuế GTGT còn phải nộp của ${monthText}: ${fmt(due)}, chuyển khoản.`,
+        documents: [doc('Giấy nộp tiền vào ngân sách', [['Nội dung', `Thuế GTGT ${monthText}`], ['Số tiền', fmt(due)]])],
+        explanation: `Nợ ${outputAcc} / Có 112 ${fmt(due)}. Không ảnh hưởng KQKD.`,
+        entries: [[L.dr(outputAcc, due), L.cr('112', due)]],
+      });
+    },
+  };
+}

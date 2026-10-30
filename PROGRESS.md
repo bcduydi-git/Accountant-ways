@@ -20,7 +20,11 @@ Nguồn sự thật: `SPEC.md` (bản 0.2). File này đủ để phiên sau là
 - [x] Hồ sơ 1 đủ tháng 1–9 + tháng 10–12 gộp (74 nghiệp vụ), người chơi tự ghi thuế TNDN và tự kết chuyển
 
 ### M3 — Hồ sơ 2
-- [ ] Như M2 + Tầng 3 (b)
+- [x] Hồ sơ 2 đủ 12 tháng (116 nghiệp vụ): NVL, CCDC (242), 621/622/627 → 154 → 155, dở dang tháng 6, TSCĐ và khấu hao, vay trung hạn + lãi, góp thêm vốn, kiểm toán giữa năm, phạt, thuế TNDN, kết chuyển
+- [x] Tầng 2: 4 bất thường (tồn kho phình, khấu hao bất thường, vốn góp thiếu mà lãi vay lớn, vay ngắn hạn tài trợ tài sản dài hạn)
+- [x] Tầng 3 (a): đối chiếu khớp engine (tiền mặt từ 5 triệu, phạt, khấu hao tài sản không dùng cho SXKD); rule tắt hiện để tham khảo
+- [x] Tầng 3 (b): 4 điều chỉnh (242 → chi phí kỳ, dự phòng do kịch bản cho sẵn số, lãi vay vốn hóa sai, ván hỏng), CĐKT/KQKD trước/sau
+- Ghi chú: dự phòng dùng số kịch bản cho sẵn (TT 48 chưa đọc); thời gian khấu hao do kịch bản cho, không chấm khung TT 45; trần ô tô 1,6 tỷ là rule unverified đang TẮT
 
 ### M4 — Hồ sơ 3
 - [ ] Như M3 + bên liên quan
